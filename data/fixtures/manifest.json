@@ -1,0 +1,9 @@
+{
+  "file": "memory-cases.json",
+  "sha256": "e89437d9f6ca342043218c10499b823a1f49c451a46a85c10edc3418aaf40ae8",
+  "cases": 60,
+  "clean": 30,
+  "poisoned": 30,
+  "frozen": "2026-11-19",
+  "origin": "Synthetic templated research fixtures. No third-party data."
+}

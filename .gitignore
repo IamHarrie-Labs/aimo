@@ -1,0 +1,11 @@
+data/*.db*
+data/approval.key
+
+.env
+node_modules/
+
+.playwright/
+output/video/
+test-results/
+.claude/
+output/*.zip

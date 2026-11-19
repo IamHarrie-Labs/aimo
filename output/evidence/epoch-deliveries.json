@@ -1,0 +1,1505 @@
+[
+  {
+    "db": "data/agent-acceptance.db",
+    "receiptHash": "0xe039987b09b82b6433f265a30eb4c795d05611eae4b3caa87cbf7e1d282f35ea",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0xe039987b09b82b6433f265a30eb4c795d05611eae4b3caa87cbf7e1d282f35ea",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "6126",
+        "intent": "CHAT_COMPLETION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0xf5e22677c7623d0e6c6e7760cfdd6d69aae7d772f371eb74ab3c814bd00b857d",
+        "0xd98500ca9b94c74f4c9d6c8b17c55ffcba2e2d616e419a711d39a4bc10b4c96d",
+        "0x689c0402fd611b08e8b24f8f902514866555585edace277944063a49d01cbab3",
+        "0xb58e6c1f8107dc443e1db19fc5fb150ace3fcf705f455773b455150f390a6866",
+        "0xcb923934caaefa65c0257d2509a313d1adfa17665eea1f3594c64f7e616d6979",
+        "0x77cb569e41ae80327afa65cbacfac436ffa469a6e9e9d0616a00404139b98adb",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/aimo.db",
+    "receiptHash": "0x6647e74a179c6bb982f8813133cb015729565007777a70136a999170a164902b",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x6647e74a179c6bb982f8813133cb015729565007777a70136a999170a164902b",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5311",
+        "intent": "WEATHER_CHECK_TEMPERATURE",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 18
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x45f4099d440833c003ed8c95321fdf5af818624a30fc70219558d83a7efb4af7",
+        "0x83496160cb1d50ddf7ce3e4041379c691aeb5845c6e25634ff7cf618b69a5214",
+        "0xff0fafbd3da2ff543a098eafbba79987f4e71600060aa0f1b3207f5d76bdd1e0",
+        "0x17e545381053eb4d14279c95ca801923dee24a68766c5bffe49a5aa91960fd5d",
+        "0x5e150f5eb610b329550b6531576a16eace8d80278f53410951a6c75329e37038",
+        "0x05b5b08846904ff847fb30f79b4155abce0118d10972952b3ce9c2973bf4b9b5",
+        "0xb4e05df87632e4336fba19e53852e82ac9d055df924a489eb3223df3bf6bbb8d",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/aimo.db",
+    "receiptHash": "0x3f461c3d78204f64b57e2039b777029e69ee3fe3953ab001b4e21344dd69e34e",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x3f461c3d78204f64b57e2039b777029e69ee3fe3953ab001b4e21344dd69e34e",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4411",
+        "intent": "TEXT_CLASSIFICATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 14
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0xb4d4fc9d0b2701aa2f6ed264a178c158d0869211f6c36cf3f8ced8eb0cfc15c3",
+        "0xdd11254dde42698e58a227e979245e89bfe9881ea1dfba8f78e83d22a1fe8d61",
+        "0x10cd5e7093a6082cde0e28d7d2e464838296c426697f152d8369454d31abf00c",
+        "0x249f63e01ea77b1fa6eb16f885acfc1b78036d04b1584faca3ed4ae6c54b9d21",
+        "0xd394410c3e5cb7c4ecb8f7fb7fecc76f807c6502fb12f002528fd8877b428d45",
+        "0xa4723a8efd0b4370fdcf653d42245433238633e5680e419b999934019343e9b4",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/aimo.db",
+    "receiptHash": "0xca64b3f021b4c57819f6ae89577716efab28bbfb7640ba930421a80d5a48a1cf",
+    "epochId": 17,
+    "status": 404,
+    "proof": {
+      "error": "receipt not in this block"
+    }
+  },
+  {
+    "db": "data/aimo.db",
+    "receiptHash": "0x9cfba30ca95324484496eba6bb1549f0a7c0e337033687d68c033c625fa6e2a7",
+    "epochId": 17,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0xd063d22e947989e5f753c4f009b5141d06dc46f697444a1ed1965bb02a4c0498",
+      "deliveries_root": "0x6e2f202fb067b43cb08a00269c5fdf83cedaa29ae4ecb22c98f12838de55dce4",
+      "delivery": {
+        "receipt_hash": "0x9cfba30ca95324484496eba6bb1549f0a7c0e337033687d68c033c625fa6e2a7",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "3521",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 17,
+      "proof": [
+        "0x1081777d4ea4f1e494ef2717dec29e2d86ad90472046be60eefaac617c9b9b5a",
+        "0x02fe8209d882f4393fd16e1d6c9b6f0fee2b278064a957fdbd243579d3f9d607",
+        "0x61382d0e9937bc230534bd8a60907facd26224522009cdff205c65780fba13fc",
+        "0xbd77b1f4b22946b801c1209d8209d29eb27c4dcfb7f3eb8ed1f8cb6f285649dd",
+        "0x8981a8da9cd9f1989c540da32e5d10ce3dfa008ccbd7d61c74c808ff1f41834c",
+        "0xc7113af30a06794256c02cc404cc340c05852e1626ec8a438416b2ba844e3311",
+        "0xd98641a6c8a1e7f8780bdcccc05af353de725e4bbf7e6a9a5e33bc01ec4b4836"
+      ],
+      "protocol_state_root": "0x4fef39f05362beb930276a37205d0b13572334ec4ff6281e81ba7e435ba13dd8"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xd570f9e24399c126d10ed8496143f52b737e56792793c209a9a7c814eac86757",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xcf498cef7cee741b92a8f47d2fb857854eba3a07947d54125aa797dc83d7786f",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x1e0179db8bc38f8ad7ae13d83cdb4f2ba707c3cb7bf976e1707ffec8b286f3dd",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x19ada298b99ead6bfc8dfd70d3afc37982d59aa589c64b65f7516a1629cd1faa",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xb7fb70c9d5da33f20524ae268134a80db7f2f8e28e50f60a6a24e27c096f806b",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x042d1c8b37a9fc7bfc626440ccdad28e1c036d0844be58d7814191f7b27266c8",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x6e254eab0cb41f6897359982089e42e831017029e4d186965ea2269464299991",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x6ce8adbe9dfe6723d1112d0f9aa4a1a3cbb91a9d7feafaef0c46ade2e4adcaf2",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xa2dc8982fcdd030dea03d882f879884440253e330c1568f326fdd227606d7a4f",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xd1ed9a1b5dbca156b7029b008046593050936ba44f46c90c8467a929afdd369c",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x5b357b2a2e06d647165d3922ccdd1950adea32fbe8fc3d34cb3931a39fe7eb76",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x76ed826f38089f748f30224f029a9d8427a511fc11614bb2ae2a119fceefc4cf",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x6686e3201905175168c893d96907b7d215233d80d7489426537829dcae8e17d8",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x40c5b26e589060b08652fd76d96dd5e60b59199b5f84abcb6691ec51fd7801ab",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xdb09ca3de6429ae6e605d42734fd69a5805454e659f9578ff3eb85c6f646cdc7",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xd18b2fe0d44a040906863b445d897a10b3cc1b579db0ba890493816556bd4cc0",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x43a77ee6c90e1339530e744655618cd782f6d5c70f6ead272cd9fad818a07184",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x6d285c5988295495cb3e4055ad8704c262f74efb86189ae7ad01e34966a1e47c",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x6865934337c0e7ddf1db1f556dcf38f892d3b6a9db6d1c8d1c423643a861b6f3",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x7ad03f12a216b6cc95754bbd1758037c085619f435e51beb524988b5e5b6120f",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x44ddd57f9ad3414475de731de09c83f359cd56ce769a47b7027d53eaa9e9213e",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xce0108b3c04053180b64ed301a91e8a9fc925632f25bdb3361da3a5921e21a58",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x6c5812914bf2a1ad24535f65017dea4aeb5cb03ed393640cd842e7ae50df3717",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x332beac8e1cc2327ee5f33f0aa8c8d40fde565ce108f95b2ef3d9444f005fff5",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x630f52edefc59a4ebd04d900b4bdcf5b77c6cdae1febf65928594eed7d2e8e22",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xf041bcccd6309d07e5359f7413e7771baa7beb51e04734ed8fd7eded48c78ef6",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xfa8730dc0e23a8b40afb00e6c4f01f9450322c82252b2788bac684139caa9360",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x78ef0ff92309caecae1264beda173df06411a1009b0bc794b35a1d4eaa23bfb7",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xbc553b6873dac897f48c48622170002c323c82d7d371f178eb8b52c97cb5d945",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x14f6a22bc5b4e61a44cceec1a67dac486a62721e0a633a7ab983a669252b5bda",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x92c04b1f28e20014cbda5ae0d6cacbf2e83fa3dd6d89b3070e8b201dc7689043",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x9e62c0443baa0fdf444f9e7557e0d2f4ec03c45605db8b14ebddac07e1fe7454",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xc7e187a993f8101f868cfd5b281f99098a30a05bd1dd81712bd38853f9a4b8d5",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x28c54e655ab2d876d28204225a5bc6e30d3fccaf66e4702dea5795ec5660bd2e",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x2b9a9bfd9aee4fda8dcc3ecc2ee2ef192d0884148f59eb68848ed4816885d189",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x03a999c7ae1ad8329943a9aa9cea87b2df459b9c8c0b962454d270d17d4637b9",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x6609f07a1f4f360d6f35048ea214b4ff05fc30785a1bc6eeb91686a367d50bcf",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xe2a46e7be4340b912fb291df2a02a749558ddec3473978aac9b0301744df02d7",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xd2ee1abc1c67d85f86b30cabcdef7f2779802eb2a1f7632d0068dfd7c261db87",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x114b3ec3fd20c61c22495ca98ad2d7d0885696bd74c3968ac1ef41e9fe2bc0c1",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x278ea62e79e1c83cc92c318e7d5f46f8a8aa2f244cda251213d736743422013c",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x5cc9aeff2d19aa923434a4514255516e4a87792c3b79473fa308a6168e894baa",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xb844facd20aa19691a9015461148a57d3ccb99de6523cdb749467aaa102a0912",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x25c06fb1162d438ec18b18ba7a7d23b3869937f7d650e15643954b70ed56e25b",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x3422dc1805d21cde82ab4531694ce27149a48d11dd9aae7817d9b11d8d804f4d",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x9b2605076b064b8e385ccac016a009f4b3b4c99a6fa185468c1b99ac64ecc497",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x1cf5c8f387970d3ce093c78223c30691cb588cca7cf65d2ea1a8ecce598453a7",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xa8b24bfad7ab0c79d61955e3317812d278119efb3bb80a27e72b15ac143d8901",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xf6fb8d8c39fd94c671c614771cfddca4740d4345887bec2fa6cd125a2e05de72",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xd51c29f420958265578d26c5523d195fdb6b75e4b7494f78f271ac0de9854b1b",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xdaa976be25020a1cf41f995f35428772f6f2f26b23b5c207c8db515d67663987",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xc7e5863597ecd4b45ac3ea05d3dfdb94832cc6b42c17107fefc48dc844d3b580",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x68472203a57c3e87c78f6874583e73adc75b70ea70d136c766d73a7ea4881f40",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xd82905832fe31ae99e5075b9374a424ed719d0fe10c65e927f2b4b453a8afd4a",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xe353c95c8e2f276eb722bb69b5d3c29dcc0a49a66da0c1034c84eb1835614dd9",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xcb7516bdc90dd2a9109dde3112a57b08c33f95c1297846217f9bbbbdb22322ad",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x9d6431e095ae3f34152566963dd24f54610b2de5f45ae9ec021d33fadb639b56",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x62fb7d4804f9680a56ce31c9f47c06ede7f0eaf46042185250175ba54ec4d008",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x02fe2a0634e5cd323f9df2d3403359db8d034fcd3a44909778ff3a1e5f1b3d3c",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x9f75a095b4332991ab99674662c20ed0830b1ece0e4d81b7b3337ed6d0958685",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x8285e5e5c6617f090980b2304ff075c21d0af06a73ea5fcb6ee817e32b5c3f39",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x0c521498aba0bd85056632f9bbe10356ed9834b4a7e2baeefda85b628709770e",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xac39b381fb26cc5b1082bab7ab3497c13b2b5ff3aef6dedbd5d8eb1db26e2505",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xa94cc92fa574c77a67aa8f56a10114cddeca431f254f0adc2e988cde52f94055",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xcf39dfcaee1cf05b7f9903535de740f0a28714f29f342783790927b0da2db16a",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0xcf39dfcaee1cf05b7f9903535de740f0a28714f29f342783790927b0da2db16a",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5066",
+        "intent": "SECURITY_REVIEW_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 18
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x682925b92c6f93402825bdf76fe5fde666e4a12141ce7d79d2c3c2f217229b15",
+        "0xdccbd16bd6ef571f136e92a508cd99d435880f6058f9bfa387b1a1519098e2bb",
+        "0x772ebff25cb7a2a2f09f52de5b9b4d45b3b0858221563b21b8351ff5d511c75e",
+        "0x0f1a8fb531e955ed0315344c5dacd28418f2aeb9bbbe2defecdce0cf189042a6",
+        "0x27d9cf6df2577b08ab149733a498eec95887433704abd3cf305a2b2c0d9607dc",
+        "0xac1143377129ec49aa0ad993e7560d7d2fb5e645fdc78a5d70030d39e8d81294",
+        "0xc16a70ffcf4e37164cf14ab7aeb7cb08feabfd6bed4f205a076af134653b2508",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x9a4e4ee4aa5f44e4da7991414a0348a196373564a28055445047d2b04eac4ab8",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x9a4e4ee4aa5f44e4da7991414a0348a196373564a28055445047d2b04eac4ab8",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5311",
+        "intent": "TEXT_CLASSIFICATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 14
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0xaa640185f896272dc0ae47666c6bd0ea78c9bc86dd69a0573c3a431fc45d7978",
+        "0xb3e6d74b1e2a182196c3982cab1dc026487c903daf45c47a5e37a1337730d9e5",
+        "0xba424ea7af2c72fdd088e920fcf3cd4874d729c00593c6239f7d7d7cdc80a13c",
+        "0x116d763bd1f560d7968df8f3b88d71699c8e513e9390904689548259ad8a3cf6",
+        "0x7993a115a0af21389ef5b8a6b1ea2e8b6df26515b002bb721804549549b025aa",
+        "0xefb2f5821a6bcf7fc41426f165176feb50c5d31a93e95410573d73340fa215c6",
+        "0xc16a70ffcf4e37164cf14ab7aeb7cb08feabfd6bed4f205a076af134653b2508",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x09b6612c3ddd1fbf46d57fa790eac768ae3dc376f3f334755a52f39912b94e06",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x09b6612c3ddd1fbf46d57fa790eac768ae3dc376f3f334755a52f39912b94e06",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5311",
+        "intent": "TEXT_CLASSIFICATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 14
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x42ce424d51da6e461608e807c024eb0079103ba1ea0464ef618043c17cafbd25",
+        "0x4f019029fcf5077b4bfead9a2a8a184d041397b41ea9a0946e8e5dc5118ed3a2",
+        "0xd6ebeb195d08a88ea7e1faf352fdbc12f4fe503e67f0a95fe586bf03d1c9319d",
+        "0xf22239310e89ed52e8093ece421eb1a67d68cb59300236271b1e44a770910926",
+        "0x40167ffe31893564dbc7d4f5caa46d00294e59d0fcf1d11da8fedbcad1f3631c",
+        "0x0d571e56d216c7497e1408c298440d487dc278ae40194d7f8fab39e1864d8900",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x762749539e290aaf43e6e148adef871543e9d4157fea9344daf7518b21f9790a",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x762749539e290aaf43e6e148adef871543e9d4157fea9344daf7518b21f9790a",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5066",
+        "intent": "SECURITY_REVIEW_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 18
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x59777931ac038f085eddba6eabebb1388386822dbde493b22adb26e126e64e9b",
+        "0xa7712083d12ac7cf0c2e84a267db67bc0c94536bbdbe9232b3dfb58b35c41abd",
+        "0xe8374f700361f80521ccc4f07d5709fab87680acf089509ed52bf891d1a7d97f",
+        "0x2eb3a4945e4aad3a64229c64dc524daf899f68a0143ae55487648ca5f85c9bb5",
+        "0xad5f9f2a1899b62de50fd6eb3d44abc5d06f0dff78b697f30edb58bba076d1af",
+        "0xf9f8768c313d3283312912b7d0a2bed619a5d307d97ef505521e40aa83c80c57",
+        "0xb4e05df87632e4336fba19e53852e82ac9d055df924a489eb3223df3bf6bbb8d",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x207fec6f6ad23afa44c3652438616f471c2fef4e799c14548867eddfd2e1070c",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x207fec6f6ad23afa44c3652438616f471c2fef4e799c14548867eddfd2e1070c",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5311",
+        "intent": "TEXT_CLASSIFICATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 14
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0xbd8d0c783c0e9d821b85a1abbb738b3a542b958f0893e552b02b5fbe90020359",
+        "0x3ef657b208f4ddbecb068e50b0cee72387f56b105c2e1066ccac694d1417e2b5",
+        "0x835b80f7c1aeeda4edc0e0f3773922f240db6099a8a2103cfeb83c8c473ab22e",
+        "0x102fa05e83b0e4ec20b5c6982892a364fae9bb8071253f898b9553b15193cece",
+        "0x3b4f4f87497d09867505ee472175a6ca17c4af7ffb81291a7e4fc1de5b183cb5",
+        "0x0d571e56d216c7497e1408c298440d487dc278ae40194d7f8fab39e1864d8900",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x82c32a54dea8f52f2449a4816340d821d901efa8fc2ae03c29e33538870a3362",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x82c32a54dea8f52f2449a4816340d821d901efa8fc2ae03c29e33538870a3362",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5066",
+        "intent": "SECURITY_REVIEW_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 18
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0xf4ff44d61bc2308fa7822649feeec93ccd44e0fbd2291c9acb51d9d5501ddfb0",
+        "0xa33db1f53c961e9c5a8b7f9adfc100ca79d7c23f7150d32b39de328ecfdc99d7",
+        "0x6b03f4a2d997f43573c7579b122e844fb999dceb731e476bd137d17b2a2fa139",
+        "0x9afdf492de2535f786265562bc84a57636bcff02782e4a3cd04e93fa4a77ab63",
+        "0x6ae817c4cd793e8bce25147b653fd661f7d25c7f450d8971e6ce1c1161af623a",
+        "0xf9f8768c313d3283312912b7d0a2bed619a5d307d97ef505521e40aa83c80c57",
+        "0xb4e05df87632e4336fba19e53852e82ac9d055df924a489eb3223df3bf6bbb8d",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x2354dde563aff5cdb9dca0a30ee4b8ce180d8a05fdf42cfac1ec47492a4312cf",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x2354dde563aff5cdb9dca0a30ee4b8ce180d8a05fdf42cfac1ec47492a4312cf",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5311",
+        "intent": "TEXT_CLASSIFICATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 14
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x99464520ab344fc9b1cdc095e3bf02a8a0062a9a1383a2c75398602714b56b9a",
+        "0xbea79e97725ae9578aaea84aff4bb7353571a22edc44a1f764a0c7d8cf18f5d4",
+        "0x1788c015dc151c549ef40a84fd3c398c7caa00abfb7ea6969e55d5ea2f8a4667",
+        "0x20a692c4e2c3840b546b1ee6d40454917fee055e6ac7517a564251c0f4cd9829",
+        "0x3b4f4f87497d09867505ee472175a6ca17c4af7ffb81291a7e4fc1de5b183cb5",
+        "0x0d571e56d216c7497e1408c298440d487dc278ae40194d7f8fab39e1864d8900",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0x22b366b8a3eb38c465008ebc17b84d176599382d6f5ae4bf1fbcf65d7b8b25b6",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x22b366b8a3eb38c465008ebc17b84d176599382d6f5ae4bf1fbcf65d7b8b25b6",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5066",
+        "intent": "SECURITY_REVIEW_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 18
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0xc30bd565a0d28821b9978a0f76b2c2cc44d8be951424883e9d0a3a4d40c263af",
+        "0x8a4cccb85d1c30757177081736542f4b12a2dd830ff86c6631f5065c66f0a0e6",
+        "0x6cd238b4b4ade62a48af5b1ef1bd0db53f7766bb0382160ed7357af4e9a944e3",
+        "0x20a692c4e2c3840b546b1ee6d40454917fee055e6ac7517a564251c0f4cd9829",
+        "0x3b4f4f87497d09867505ee472175a6ca17c4af7ffb81291a7e4fc1de5b183cb5",
+        "0x0d571e56d216c7497e1408c298440d487dc278ae40194d7f8fab39e1864d8900",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "receiptHash": "0xe7a170d33161fd14b0df8b981c056fe8db6bb3b2e930402f809acb81dfce277d",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0xe7a170d33161fd14b0df8b981c056fe8db6bb3b2e930402f809acb81dfce277d",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "5311",
+        "intent": "TEXT_CLASSIFICATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 14
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x25c14301e65b5eaff96157a2ec2cb6af11d6e472936dd7364aae0b7cd1224842",
+        "0x895c5897bd3959b21b9785205e5f16a6ea28c7618920d8fdf891bef134dbe851",
+        "0x7991dca9f81b5200541a5720cd23d74fca64916b80b3af41a10e1707d8c1bdb4",
+        "0x46ab25610081f8174300e0ca5ac159c25af03987a762ee6d74c6c7efb0a24579",
+        "0xcb923934caaefa65c0257d2509a313d1adfa17665eea1f3594c64f7e616d6979",
+        "0x77cb569e41ae80327afa65cbacfac436ffa469a6e9e9d0616a00404139b98adb",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0xd6a8a46bed8420cd15dee27a5acb004581386750e0982e832ca2545b8d81ecc9",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0xd6a8a46bed8420cd15dee27a5acb004581386750e0982e832ca2545b8d81ecc9",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x559a194a32e54170ac73073be4aef0aca5c4d916b8742b95f0a70a355b0213c2",
+        "0x686ca548650baac0079872ee1e5443f58f28f3b8347699ec607c3b19b89c3adc",
+        "0x8623fee2ba9b42f8b5b19c0c8f270fc10a1f381b2a65db62e30930c230714ca7",
+        "0xf5ac493c7e72a4ccec5bf267a2c8e5fe5a45f466ddcdadf687f9f6ddfc6650cc",
+        "0x59f0896fd9f62feba81f44781097c354c68dccb815878780bf95153abf8da317",
+        "0xac1143377129ec49aa0ad993e7560d7d2fb5e645fdc78a5d70030d39e8d81294",
+        "0xc16a70ffcf4e37164cf14ab7aeb7cb08feabfd6bed4f205a076af134653b2508",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0xc7f10ccd2aec91aaf3273449f642303842c9787906f269e5494e4ba8f274d7be",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0xc7f10ccd2aec91aaf3273449f642303842c9787906f269e5494e4ba8f274d7be",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x15af1bffbdc9c3504cd76b7c97982cdf2879d636bfcd51dcb60e4a9987bfbb63",
+        "0x1bd98e678bc2c486358ee9e998741db03f7b94396f6b785ccd46350b20cd409d",
+        "0x6a5eae286c9d0b4696df123606d1b32fbdf039834b09a392b23bc6a9878c9117",
+        "0x4bd0868d73ce5e124d3c84200cd85ee6eddf3798f362c02a4d43c992ba823ff3",
+        "0x27d9cf6df2577b08ab149733a498eec95887433704abd3cf305a2b2c0d9607dc",
+        "0xac1143377129ec49aa0ad993e7560d7d2fb5e645fdc78a5d70030d39e8d81294",
+        "0xc16a70ffcf4e37164cf14ab7aeb7cb08feabfd6bed4f205a076af134653b2508",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0x5a6f754f3119efb03cb01b00c82ce1ef901e1f8de74f11863f7ccd07013f364e",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x5a6f754f3119efb03cb01b00c82ce1ef901e1f8de74f11863f7ccd07013f364e",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0xf7a7a746038225b2a2d8da81d58b9061193b8356fd6e1c084f4f9b0f8b397f54",
+        "0x112b143e82b730e69eb8cf080bc3e12b729084b9dfe4f3d529cde8d4e3974dcb",
+        "0x11d5271ccd7d8aae7ffff99400f7abc0b6c9ffbb9e3d0f1808a7636e1a16520d",
+        "0x251b1ebfb32e5856a5cec32bf97fae19d743c93b96c6de55ba99e713c76e5782",
+        "0x951bfc358c6f768f61f12c90f9e665a16034f17491546a2f3d366b77241c54e6",
+        "0x05b5b08846904ff847fb30f79b4155abce0118d10972952b3ce9c2973bf4b9b5",
+        "0xb4e05df87632e4336fba19e53852e82ac9d055df924a489eb3223df3bf6bbb8d",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0xd53a048ec3d6f1ce2617f31ec6ec67844f50909b5876df47588c1526be97c5ab",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0xd53a048ec3d6f1ce2617f31ec6ec67844f50909b5876df47588c1526be97c5ab",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x33da980fccf7bf17dc45a9cabfa7756292b467cb417e8115507140ac300d91c9",
+        "0x7345858979d6043cb817fa6e9bca8331a4b8fcd9587ade7e8a19bcb0ad682b29",
+        "0x53ccf1bffcb559c26ca39af6751d9db5060da1d07235913b8dd1a88861c18f2b",
+        "0xf5ac493c7e72a4ccec5bf267a2c8e5fe5a45f466ddcdadf687f9f6ddfc6650cc",
+        "0x59f0896fd9f62feba81f44781097c354c68dccb815878780bf95153abf8da317",
+        "0xac1143377129ec49aa0ad993e7560d7d2fb5e645fdc78a5d70030d39e8d81294",
+        "0xc16a70ffcf4e37164cf14ab7aeb7cb08feabfd6bed4f205a076af134653b2508",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0x496bae8c296becfda7775758f4ba1feb731654b227682a8161b1fb34a386363e",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x496bae8c296becfda7775758f4ba1feb731654b227682a8161b1fb34a386363e",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x02f94ea79a149486f137d3237beff0b704cd10a28e8ad3670c2caec438216507",
+        "0x996b701deb21c6ff5a94410cfff31169ed83367c252e328288a1d5d154dbe59c",
+        "0xc86fba1b287db22db8cc5c9a78a9f5076970e9819f7f54d807ec46e3858dfa46",
+        "0x2bc7e7cbca7aa37d6cf767b2115cc380cf7a8a53c61dce9139cd627957266c95",
+        "0xd394410c3e5cb7c4ecb8f7fb7fecc76f807c6502fb12f002528fd8877b428d45",
+        "0xa4723a8efd0b4370fdcf653d42245433238633e5680e419b999934019343e9b4",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0xfc548d1f68771361b831ebd2928913af3f082a8fa20d0faec33266563e15ba93",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0xfc548d1f68771361b831ebd2928913af3f082a8fa20d0faec33266563e15ba93",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x98d42f0e14d0ae67c7dced7c948700d5037960d623a2c7fcfbcf4fbfdbbe28c8",
+        "0x1efb08b463e705b4ad5feca14e249937f410c6412b1c6ad4a6157abfdf72af50",
+        "0xdca3eef60a7645b3f6c066bcbd1f72f0bd861fb698e18dabf0c731d5b21beabd",
+        "0x183b26e615b8af28c1c700ac9dd260f16d903ab134a8b0045cac94719dd85566",
+        "0xc1e000f614fbbf7c608dd44cd0dc9ccbc713028afbf67b3cac1b5cbd9a337836",
+        "0x77cb569e41ae80327afa65cbacfac436ffa469a6e9e9d0616a00404139b98adb",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0x934270a5c9e7fa3233d7eaa928fc9dac222dcdacdce0dd82c4a3277ff2653208",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x934270a5c9e7fa3233d7eaa928fc9dac222dcdacdce0dd82c4a3277ff2653208",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x1cd1600ff17509ff3c7d69e6c4014f8d4d94e5f3e3374b0043a057389c088f56",
+        "0x3f97f7564778cb1edb43c06a3b317635342487307c6b2129e70ef38586d47803",
+        "0xa64854aa24a5934798799fd28d3ed7dcb710048317d717a8f674e60847c14778",
+        "0x1017109f7e0a07a7f8eff88f0878d9fb6aa9a8c72a3991f39cfc9985eca01f77",
+        "0x7993a115a0af21389ef5b8a6b1ea2e8b6df26515b002bb721804549549b025aa",
+        "0xefb2f5821a6bcf7fc41426f165176feb50c5d31a93e95410573d73340fa215c6",
+        "0xc16a70ffcf4e37164cf14ab7aeb7cb08feabfd6bed4f205a076af134653b2508",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0x7531fc1dca930e78249356de9e569928de4317257f8b67446f1c26666b975909",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x7531fc1dca930e78249356de9e569928de4317257f8b67446f1c26666b975909",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x464f1dc0005211d7e2f1786b37d2d7bf1c20b7bfc838282a7c5b4c4cec6944f5",
+        "0x80bbfbd25ddbf435be741c8cca81aa7c8ee3b9f7796649a0fde3efaf95ef1997",
+        "0xe8374f700361f80521ccc4f07d5709fab87680acf089509ed52bf891d1a7d97f",
+        "0x2eb3a4945e4aad3a64229c64dc524daf899f68a0143ae55487648ca5f85c9bb5",
+        "0xad5f9f2a1899b62de50fd6eb3d44abc5d06f0dff78b697f30edb58bba076d1af",
+        "0xf9f8768c313d3283312912b7d0a2bed619a5d307d97ef505521e40aa83c80c57",
+        "0xb4e05df87632e4336fba19e53852e82ac9d055df924a489eb3223df3bf6bbb8d",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0x49a0848b6feccb1c4053d4842f33992f43b96eae3cbdfb3be7bc9c9d5195cc78",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x49a0848b6feccb1c4053d4842f33992f43b96eae3cbdfb3be7bc9c9d5195cc78",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0xb6ba16cec31611659275757607cecfd7bddc15816656c127ad937b3a7556ad75",
+        "0x996b701deb21c6ff5a94410cfff31169ed83367c252e328288a1d5d154dbe59c",
+        "0xc86fba1b287db22db8cc5c9a78a9f5076970e9819f7f54d807ec46e3858dfa46",
+        "0x2bc7e7cbca7aa37d6cf767b2115cc380cf7a8a53c61dce9139cd627957266c95",
+        "0xd394410c3e5cb7c4ecb8f7fb7fecc76f807c6502fb12f002528fd8877b428d45",
+        "0xa4723a8efd0b4370fdcf653d42245433238633e5680e419b999934019343e9b4",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0x10396744ad2dd16010b14f77c6d15ab840a1af7dff5a8d6aba8be83f72f6b924",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x10396744ad2dd16010b14f77c6d15ab840a1af7dff5a8d6aba8be83f72f6b924",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x24f4f3ec19d23ca8b03a0db0696193aa37254cd619ca114c92271310864cb8eb",
+        "0x6f01ee89cf212c41eeae6f15c338f75f7ff31b0e471a651ae170c4a0fd72b063",
+        "0xc5b1b314c7e6045c2d1dda8bd8631adc55a655fdd4c9bc43df10fde4c85d9259",
+        "0xe4e49d4f6ea9e1495d93f967c00de4217d162476a09e91c2c4bcac0725b98406",
+        "0x40167ffe31893564dbc7d4f5caa46d00294e59d0fcf1d11da8fedbcad1f3631c",
+        "0x0d571e56d216c7497e1408c298440d487dc278ae40194d7f8fab39e1864d8900",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0xb9a4dc561c0df674ff7827fa139f4dc1d7328f916e4a869fba3bcc86e7bb56bb",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0xb9a4dc561c0df674ff7827fa139f4dc1d7328f916e4a869fba3bcc86e7bb56bb",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x5bc00d5467065fd552510a1d7f6ba41d24a6b9fb7bf65a0002a0a3c94f10f86c",
+        "0x565c759834264be590ff83bf2e8091ad057432983f9ec81ed5195eec19494ed1",
+        "0x525f360a24959fed1e17bafab3020cf6382e1ad21e889a520989208982f89794",
+        "0xfe35d628e01a08ba668805dedacf5a33170dba67a492395c97696fd073f0fe1e",
+        "0xd6f8e2e1a83fc25633e92bf120be495c5e9e11fbfbd28f42125bcf93e4757015",
+        "0xefb2f5821a6bcf7fc41426f165176feb50c5d31a93e95410573d73340fa215c6",
+        "0xc16a70ffcf4e37164cf14ab7aeb7cb08feabfd6bed4f205a076af134653b2508",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0x2065981b8343a2e5097791f810108c78a3566fc82da85183e90d934d7bf6d1c7",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x2065981b8343a2e5097791f810108c78a3566fc82da85183e90d934d7bf6d1c7",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x7409a2af4d3cb16a56239e99274569ca8d9a269f396dc2d87379ed0dc4d798ba",
+        "0x8f4ca89c9e87d48f78aa43239e704987042069e87e831a1e729b31d290fdb9df",
+        "0x835b80f7c1aeeda4edc0e0f3773922f240db6099a8a2103cfeb83c8c473ab22e",
+        "0x102fa05e83b0e4ec20b5c6982892a364fae9bb8071253f898b9553b15193cece",
+        "0x3b4f4f87497d09867505ee472175a6ca17c4af7ffb81291a7e4fc1de5b183cb5",
+        "0x0d571e56d216c7497e1408c298440d487dc278ae40194d7f8fab39e1864d8900",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0xdad18c32908fd67c86285bd78f5647466f9ec00cd0850ac02ecbdcfa05da1fc7",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0xdad18c32908fd67c86285bd78f5647466f9ec00cd0850ac02ecbdcfa05da1fc7",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0xf7ca6f1ffd18407fc9fe9b4b171a3bc4a2dff45c7db051cedd32320ae1450b9f",
+        "0x00cd6827019fe5f57146548b6d72f3002305736f2a3ca60925aab7f809980f58",
+        "0x80736dd7af27e0c74efce9dab11367a18294f0ef3ba2ad8c2c714a514e4643e0",
+        "0x8c4bb060ac9d23e369305fb1fb944d11a588bd552ec72c0f502c7176372d9491",
+        "0x59f0896fd9f62feba81f44781097c354c68dccb815878780bf95153abf8da317",
+        "0xac1143377129ec49aa0ad993e7560d7d2fb5e645fdc78a5d70030d39e8d81294",
+        "0xc16a70ffcf4e37164cf14ab7aeb7cb08feabfd6bed4f205a076af134653b2508",
+        "0xf062596c282a193c7896aaf69c7641a721b1138abd8d0f7ef310020e6def2f29"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0x2f992d6ce969c4d35212425203f00798099285e5274f4099050bada6068a2de3",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x2f992d6ce969c4d35212425203f00798099285e5274f4099050bada6068a2de3",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x563c21467ce9e93be76d5b083739b0ee610ec59166f1b9a712a9c3b024d1e0a4",
+        "0x0051febba407e49ab971b9a9cd1e6b32e2029f222024a4c3990f7858246e499d",
+        "0x0ed1d31e73957f623f06015b26b746f82a53a41a975949d53933cfa77b3629f8",
+        "0x50d17a2c6bf1f6afb71b7fd70d5fb3d144587d0e3b6b09ec5064cd9fbcd02fa6",
+        "0x1cf74d3b5b49bd9dc26df86d5cb2069a76091cbced5d18eb965eb6816598804f",
+        "0xa4723a8efd0b4370fdcf653d42245433238633e5680e419b999934019343e9b4",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/benchmark.db",
+    "receiptHash": "0x286c988550bf482e7f527a99f4c7610355f448e175bbfbfe9b8dce6e147e2f30",
+    "epochId": 18,
+    "status": 200,
+    "proof": {
+      "block_data_root": "0x06524587340c8805c75c36b80fc4910384126057a651e3ad4292f52a92082f5d",
+      "deliveries_root": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+      "delivery": {
+        "receipt_hash": "0x286c988550bf482e7f527a99f4c7610355f448e175bbfbfe9b8dce6e147e2f30",
+        "payer": "0x6858f04557aaed3a60ea81fa0b338fc2aa658e52",
+        "miner_id": "4880",
+        "intent": "LLM_OUTPUT_EVALUATION_GENERAL",
+        "usdc": 10000,
+        "class": "paid_consumer",
+        "ranking_round": 16
+      },
+      "epoch_id": 18,
+      "proof": [
+        "0x5f9e2193b1e797b0c7d1f26c94329bfc9f50f44b2bbf717a0a7148639cd0f140",
+        "0x825ecc4144ded4f4d47168825e2ec7b698e175d7558eea598c3afd7301f898e5",
+        "0x44f3c017d948b175fc513c634f337055d94bd41ec338bda02cbcf3ed30de9c9d",
+        "0x562c0c044dc2f4e30abe75b20a5551f311dcda2e9c64cb85ca563fac2c233f32",
+        "0x1cf74d3b5b49bd9dc26df86d5cb2069a76091cbced5d18eb965eb6816598804f",
+        "0xa4723a8efd0b4370fdcf653d42245433238633e5680e419b999934019343e9b4",
+        "0x044ae4ddaff6e62ca49b699388555f05b4b5f3ebb21d5e28786fcff069cbfbcf",
+        "0x6b8a6fc3290fd5e3ab0ba2da1c167d79dc3cb33849fcdac401f46a5b1f07f87f"
+      ],
+      "protocol_state_root": "0xc09080a4460298c8cda8454572732e17295f95148ae66e98b0b07f3ccd0422a4"
+    }
+  },
+  {
+    "db": "data/provider-probe.db",
+    "receiptHash": "0xc11a93e68296c58da0398c0796d2acc01ffe9ed77c4e20479a4b504a9fe93cd5",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/provider-probe.db",
+    "receiptHash": "0x23a869f88b155f7190f40e8226122e5502a4e54076cff194fb0dd0bb83e76998",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/provider-probe.db",
+    "receiptHash": "0x27d176c618259dbc6c5b8edf2cc1d3c2f4674c942f398507cc040aed0a4ab7fc",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/provider-probe.db",
+    "receiptHash": "0xc8416bb25172c7719b38d98819467ca89e8f4dcb1ed857eddc4acb0dbcf9ff63",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/provider-probe.db",
+    "receiptHash": "0xeab5f967b75cd651f423678699efec18e799fe0ea4ab8fd7778b50ce8e755d9c",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  },
+  {
+    "db": "data/provider-probe.db",
+    "receiptHash": "0x1feffad3d053681a641892a5cce24638b66be3204fb73c3c5fd03ccd5d9c56c6",
+    "epochId": 19,
+    "status": 404,
+    "proof": {
+      "error": "no block recorded for this epoch"
+    }
+  }
+]

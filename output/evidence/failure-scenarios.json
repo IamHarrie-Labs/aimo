@@ -1,0 +1,55 @@
+{
+  "createdAt": "2026-11-19T16:54:39.373Z",
+  "node": "https://devnode.telegraphprotocol.com",
+  "note": "Live node, throwaway signer, zero spend. Each case must stop before signing a payment.",
+  "passed": 5,
+  "total": 5,
+  "results": [
+    {
+      "name": "no budget",
+      "expectation": {},
+      "passed": true,
+      "error": "Daily budget exceeded",
+      "purchaseState": [],
+      "signedPayments": 0,
+      "latencyMs": 4006
+    },
+    {
+      "name": "price above per-request cap",
+      "expectation": {},
+      "passed": true,
+      "error": "Unsafe escrow challenge",
+      "purchaseState": [
+        "unresolved"
+      ],
+      "signedPayments": 0,
+      "latencyMs": 2092
+    },
+    {
+      "name": "payment to an unexpected receiver",
+      "expectation": {},
+      "passed": true,
+      "error": "Escrow receiver mismatch",
+      "purchaseState": [
+        "unresolved"
+      ],
+      "signedPayments": 0,
+      "latencyMs": 4958
+    },
+    {
+      "name": "intent with no live schema",
+      "expectation": {},
+      "passed": true,
+      "error": "Canonical Intent has no live providers",
+      "purchaseState": [],
+      "signedPayments": 0,
+      "latencyMs": 1642
+    },
+    {
+      "name": "provider unavailable during memory write",
+      "passed": true,
+      "verdict": "QUARANTINE",
+      "memo": "Retrieved content from scenario: local rules: REVIEW; paid review failed: Provider timed out. Cost 0 uUSDC. Decision: kept out of active memory."
+    }
+  ]
+}

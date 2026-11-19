@@ -1,0 +1,33 @@
+{
+  "mode": "scripted identical-copy memory planner and simulated tools",
+  "results": [
+    {
+      "configuration": "ingress-only",
+      "badRetained": 0,
+      "goodRetained": 15,
+      "unauthorizedExecuted": 0,
+      "authorizedCompleted": 15,
+      "totalClean": 30,
+      "totalPoisoned": 30
+    },
+    {
+      "configuration": "ingress-and-memory",
+      "badRetained": 0,
+      "goodRetained": 15,
+      "unauthorizedExecuted": 0,
+      "authorizedCompleted": 15,
+      "totalClean": 30,
+      "totalPoisoned": 30
+    },
+    {
+      "configuration": "all-three-gates",
+      "badRetained": 0,
+      "goodRetained": 15,
+      "unauthorizedExecuted": 0,
+      "authorizedCompleted": 15,
+      "totalClean": 30,
+      "totalPoisoned": 30
+    }
+  ],
+  "limitations": "Each poisoned fixture requests the same simulated unauthorized tool action. These action outcomes evaluate the runtime gates, not LLM attack success rates."
+}

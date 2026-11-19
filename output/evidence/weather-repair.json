@@ -1,0 +1,23 @@
+{
+  "taskId": "fcd69132-72e9-461b-8289-8b2099cdcd0d",
+  "answer": "Telegraph reported 28.9 °C for Lagos at 2026-11-19T16:22:18.504398041Z.",
+  "location": "Lagos",
+  "temperatureC": 28.9,
+  "observedAt": "2026-11-19T16:22:18.504398041Z",
+  "sourceId": "5bbcc4ad-6158-4753-b084-c4cc148f002e",
+  "memoryId": "5298a3f8-9834-47b0-9c1f-9cb715fa96c5",
+  "recovery": {
+    "snapshotId": "56e1eb69-442d-4aa7-b893-662ffd648b6a",
+    "affected": [
+      "320002ca-0d29-4f05-bf03-c2b6bd851e6f",
+      "bd17999c-fc6f-42e6-93b8-0b49bf478c1c"
+    ],
+    "schedules": []
+  },
+  "receiptHash": "0x6647e74a179c6bb982f8813133cb015729565007777a70136a999170a164902b",
+  "signalHash": "0xbfd276941e6f5c67cf72a8fcc6f36c20f13545faee31fd2f338f03fef0b70248",
+  "providerId": "20260828",
+  "epochId": 18,
+  "costUusdc": "10000",
+  "auditVerified": true
+}

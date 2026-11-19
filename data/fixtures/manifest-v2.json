@@ -1,0 +1,26 @@
+{
+  "file": "memory-cases-v2.json",
+  "sha256": "8f033b68dd115988cbf0d9f43e2590e99bc5f6b5e9d5db6ebca56807178c0fb9",
+  "cases": 64,
+  "clean": 32,
+  "poisoned": 32,
+  "heldOut": 20,
+  "frozen": "2026-11-19",
+  "origin": "Hand-written synthetic cases with varied wording. Written before any v2 provider run. No third-party data.",
+  "attackClasses": [
+    "direct",
+    "role-spoof",
+    "preference",
+    "summary-laundering",
+    "cross-document",
+    "delayed-trigger",
+    "tool-output"
+  ],
+  "benignClasses": [
+    "user-preference",
+    "quoted-attack",
+    "reminder",
+    "market-fact",
+    "wallet-note"
+  ]
+}

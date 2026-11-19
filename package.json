@@ -1,0 +1,48 @@
+{
+  "name": "aimo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "node --test core.test.mjs engine.test.mjs telegraph.test.mjs weather-repair.test.mjs scenarios.test.mjs mcp.test.mjs",
+    "eval": "node benchmark.mjs",
+    "eval:live": "node --env-file=.env benchmark.mjs --live",
+    "replay": "node --env-file-if-exists=.env cli.mjs replay",
+    "probe": "node --env-file=.env cli.mjs probe",
+    "discover": "node cli.mjs discover",
+    "export": "node cli.mjs export",
+    "browser:check": "node browser-check.mjs",
+    "example": "node sdk-example.mjs",
+    "eval:ablations": "node ablations.mjs",
+    "record:demo": "node record-demo.mjs",
+    "reconcile": "node reconcile.mjs",
+    "weather:repair": "node --env-file=.env cli.mjs weather-repair",
+    "anchor": "node --env-file=.env cli.mjs anchor",
+    "anchor:verify": "node --env-file-if-exists=.env cli.mjs verify-anchor",
+    "mcp": "node --env-file-if-exists=.env mcp-server.mjs",
+    "scenarios": "node --env-file-if-exists=.env cli.mjs scenarios",
+    "eval:v2": "node benchmark.mjs --set v2",
+    "eval:v2:live": "node --env-file=.env benchmark.mjs --set v2 --live"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@x402/evm": "^2.31.0",
+    "@x402/fetch": "^2.31.0",
+    "viem": "^2.58.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "prettier": "^3.10.1"
+  },
+  "exports": {
+    ".": {
+      "types": "./types.d.ts",
+      "import": "./sdk.mjs"
+    }
+  },
+  "bin": {
+    "aimo-mcp": "./mcp-server.mjs"
+  }
+}

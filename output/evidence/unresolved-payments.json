@@ -1,0 +1,314 @@
+[
+  {
+    "db": "data/agent-acceptance.db",
+    "id": "6db1e97896a6f422a1b59ab1c6a8b459033868577068c2e3cb2595a95ddbc138",
+    "error": "Escrow challenge unavailable (HTTP 503): {\"error\":\"could not route this question now, try again later\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/aimo.db",
+    "id": "f0462fdd9d3f1a27c1134e807573f3356746a855872a3a84197bf9df6b22e026",
+    "error": "Escrow challenge unavailable (HTTP 503): {\"error\":\"no_compatible_miner\",\"intent\":\"WEATHER_CHECK_TEMPERATURE\",\"message\":\"no request built for a miner serving WEATHER_CHECK_TEMPERATURE carries the resolved input\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/aimo.db",
+    "id": "67d26d042ffef54b2107731b55b1998740f8abfbee06af5f8123c27b7eb2b13d",
+    "error": "Escrow challenge unavailable (HTTP 503): {\"error\":\"no_compatible_miner\",\"intent\":\"TEXT_CLASSIFICATION_GENERAL\",\"message\":\"no request built for a miner serving TEXT_CLASSIFICATION_GENERAL carries the resolved input\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/aimo.db",
+    "id": "ef28062bba557f03074025be3fa97875146e69dfd7e959cec3b7d9f6230327de",
+    "error": "Escrow challenge unavailable (HTTP 503): {\"error\":\"could not route this question now, try again later\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/aimo.db",
+    "id": "ddbc1f7bd5aba7696deadb677c37148338d0d0fe200b5a07e1fc1bb3b5b53100",
+    "error": "Escrow challenge unavailable",
+    "httpStatus": null,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/aimo.db",
+    "id": "49c004c387dc22d26c148f7981b36a1a71139212bbd2372b39465849d4d3dfa2",
+    "error": "Missing paid delivery evidence",
+    "httpStatus": null,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "5cd2d5c8a8124ac93642e1fc7b689a34731260ee5a9482d53bf10e8fc05742c0",
+    "error": "The operation was aborted due to timeout",
+    "httpStatus": null,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "1aaaa0049d6fbc362beccbaa8182b3f88cc9529b422be156dca05be0ef08641e",
+    "error": "The operation was aborted due to timeout",
+    "httpStatus": null,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "e0a794d6073bbd0c0d3d5808488bb79858f2d8e027875eab00036931a18aa75f",
+    "error": "The operation was aborted due to timeout",
+    "httpStatus": null,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "83263e37c6936cb2a3d15b6500c04f242d94da0b143b99496ef9db21723f548d",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "db645b526f63ebd1618c6c883d2f2f1145f180393558080797cc161a3724a591",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "e43e7b6823093fa04f58fba35cff3b2d6259ad131cf453752faa054bd73ded3d",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "f3b7aae58015b56d6f6658a3ad03bcb9ccea599a70f083487fcc76afef7d921a",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "60d1d6aaf0fc9478e43210c5df93df558d583c29fb3603c7b1cfdd16bb8bde9b",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "e0904ef2806ec20b211dc0e00a2736c802ca840aa7dd50572beae7e631b4c8e9",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "8237ff7c7fcbdcf3da0ec0a07afaf89f8031c7da0b94a697d48c4f7b46d92912",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "d150482055f50c2e8cb89afe1e0042f9c524dc10ea3f75068e5046ef934beeb9",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "2a5a23cd325176dd34438478a11e7e469a1f359aea5ded5c242c1ce2d105768b",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "2dd3f7c06ce9abc3d389e58be8dc12b7253742e85668cb77055a17f0a2cace13",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "2b2b549c02b6c94676dc7f428418a28ad771db3eb04c4bc1af99e86bea061f96",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "a34e662ed93460a8387fcebc96375ea98934e9c46d09b92dc75e691957cad6f4",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "7349c0111faef151851ed0facc9b90c0c27bfe79972831ba6764fa8062523e25",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "109eba42ab83acf34dd02f894893d5b048de10037711e49c966b04dbcabc75c5",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "fabf464dc4adc568d41d2af4a38842a0f22afc744fd42408b76e66851654055e",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "f7ee268b4c4e7ce429f5863943f213e9ba3503777b1593ebad4e58b70224abeb",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "1f11fc2509cf33e41ad2c4d06ba596d8ddc3dba8582942312cc277d45b91a74b",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "1f9464f61b7a328b73bbe651af8ec1502526779422fa83f9b188fdccfbddaa2d",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "300892e56b2507eb1d620611e90688c949ebbef3d51dcc5c97c9d0913cc07f1a",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "ca6c7acd3a8fa03914c59babdc0b23e1497a4ae8d3013a376118f92ea80606ee",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "ba667666746cf9f8c18778bc274d9c078176810371dda01e66d522b93d45c12d",
+    "error": "Escrow challenge unavailable (HTTP 404): {\"error\":\"miner_not_found\",\"message\":\"miner not found: 7423\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "b5d5d416830aae361b4eefb4983c2243a2500732906726b9620430f9e10eb1d4",
+    "error": "Escrow challenge unavailable (HTTP 502): <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "1a896db7dc46b0a67ea5d7b95dcb40ffe87d0eebb166af2505ccb56fd0d5087a",
+    "error": "Escrow challenge unavailable (HTTP 502): <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "c664a025b5b3c76be8140e0dd03861d42df5fc7c44ca02f3137ac9de3801b327",
+    "error": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+    "httpStatus": null,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "dfeaba160d565ac3f99060e848af4a6fc2ad7af698ab61cbf66eaa6c53757a6a",
+    "error": "fetch failed",
+    "httpStatus": null,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/benchmark-v2.db",
+    "id": "5b01e3ec821a997cf8b892ec81fc63fab429c870ce04d391c3e34f0b79bf5cd4",
+    "error": "The operation was aborted due to timeout",
+    "httpStatus": null,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/provider-probe.db",
+    "id": "fc0bf630e7ce174d085b716cd5a9868e7e32523664ff1022c4d28339fc2ad59b",
+    "error": "Missing paid delivery evidence (HTTP 500)",
+    "httpStatus": 500,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/provider-probe.db",
+    "id": "27d2adc68396d731434882060000cae3f4be96bfd2129f2fccac965f7c45f934",
+    "error": "The operation was aborted due to timeout",
+    "httpStatus": null,
+    "kind": "unknown",
+    "resolution": "unknown; signed request timed out or failed in transit, check escrow balance before retrying"
+  },
+  {
+    "db": "data/provider-probe.db",
+    "id": "912fb409e0abf41e180698d1ddea1faad4c8a1396548c1be1e7ca6ed278939a1",
+    "error": "Escrow challenge unavailable (HTTP 503): {\"error\":\"no_compatible_miner\",\"intent\":\"TEXT_CLASSIFICATION_GENERAL\",\"message\":\"no request built for a miner serving TEXT_CLASSIFICATION_GENERAL carries the resolved input\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  },
+  {
+    "db": "data/provider-probe.db",
+    "id": "46cc3ae986486d7ec583929e63903154b13613731906c8c35d91b6db7a7030dd",
+    "error": "Escrow challenge unavailable (HTTP 503): {\"error\":\"no_compatible_miner\",\"intent\":\"TEXT_CLASSIFICATION_GENERAL\",\"message\":\"no request built for a miner serving TEXT_CLASSIFICATION_GENERAL carries the resolved input\"}",
+    "httpStatus": null,
+    "kind": "pre-signature",
+    "resolution": "failed before signing; not charged; released for retry"
+  }
+]
