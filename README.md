@@ -31,7 +31,7 @@ npm run export
 - **MCP server** (`npm run mcp`) so any MCP-capable agent can use AIMO's checkpoints. The server never offers tools that approve actions or settle reviews, so an agent can't approve itself.
 - **Harder v2 benchmark** (64 cases, 7 attack classes, 5 benign classes, held-out split) and **live zero-spend failure scenarios** (`npm run scenarios`).
 
-**Live result (v2, 64 cases):** paid review kept 17/32 legitimate memories against 12/32 for local rules, with no extra attacks committed, for 0.58 test USDC. See docs/results-v2.md, docs/provider-suitability.md and docs/gap-analysis.md.
+**Live result (v2, 64 cases):** paid review kept 17/32 legitimate memories against 12/32 for local rules, with no extra attacks committed, for 0.58 test USDC. See docs/results-v2.md, docs/provider-suitability.md and docs/gap-analysis.md. **v0.2.1 live re-run:** with risk-signal triage, local rules alone keep 18/32, and local plus Telegraph keeps 22/32 with 0/32 attacks committed (see docs/results-v2.md for answer reuse and cost).
 
 ## Use from another agent (MCP)
 

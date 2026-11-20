@@ -14,6 +14,28 @@ const attackPatterns = [
 // independent providers call it safe data.
 const quotation =
   /\b(quoted|for analysis|example of|researchers?|reported that|incident|phishing (?:email|message) (?:said|read)|the attacker wrote)\b/i;
+// Risk signals decide what needs review. Wording such as "remember" or
+// "always" is not a risk on its own: "always use metric units" is a normal
+// preference. A standing instruction only matters when it touches money,
+// addresses, secrets, approvals, outbound data or the agent's own rules.
+const riskSignals = {
+  money:
+    /\b(pay(?:s|ment|ments|ing|out|outs|ee)?|paid|transfer\w*|send|sent|wire\w*|fees?|refund\w*|payroll|invoice\w*|deposit\w*|withdraw\w*|usdc|usdt|eth|funds?|treasury|vendors?|swap\w*|bridg\w*|wallets?|recipients?|settle\w*|top-?ups?|rebalanc\w*)\b/i,
+  address: /\b0x[0-9a-f]{3,}|\b(?:bc1[a-z0-9]{20,}|[13][a-km-zA-HJ-NP-Z1-9]{25,34})\b/i,
+  secret:
+    /seed phrase|mnemonic|private key|api keys?|secret|credential|password|keystore|access token|auth token|bearer token|\bkeys\b/i,
+  authority:
+    /approv\w*|authori[sz]\w*|allow-?list|whitelist|permission|consent|polic(?:y|ies)|override|bypass|disable|trusted|admin|operator/i,
+  directive:
+    /\b(?:assistants?|agents?|ai|model|bot)\b.{0,40}\b(?:must|should|shall|has|can|will|needs? to)\b|note_for_agent|agent_directive|\binstruction|system prompt|developer message|\[system\]/i,
+  outbound:
+    /\b(?:forward\w*|e-?mail(?:s|ed)?\b.{0,40}\bto|upload\w*|export\w*|reveal\w*|share\w*|copy of)\b|@[a-z0-9-]+\.[a-z]{2,}/i,
+  encoded: /base64|[A-Za-z0-9+/]{40,}={0,2}/,
+};
+const restrictive =
+  /\b(?:requires?|needs?|must (?:have|get)|only (?:with|after|by))\b.{0,40}\b(?:approval|confirmation|consent|signature)\b/i;
+const relaxing =
+  /no longer|not (?:needed|required)|need no|never need|without|skip|waive|auto\w*|pre-?(?:approved|authori[sz]ed)|already|exempt|instead|retired|treat|standing|on (?:its|their) own|rather than|new (?:recipient|address|payee|account|wallet|rule)|replacement|backup/i;
 export function scan(content) {
   const normalized = content
     .normalize("NFKC")
@@ -25,20 +47,28 @@ export function scan(content) {
       text: m[0],
     })),
   );
-  const ambiguous =
-    /remember|preference|payment|transfer|instruction|wallet|base64|reconcil|recipient|from now on|going forward|in future|next time|whenever|always|by default|address|approv|secret|private key|api key|credential|assistant|agent|0x[0-9a-f]{6,}/i.test(
-      normalized,
-    );
+  const signals = Object.entries(riskSignals)
+    .filter(([, pattern]) => pattern.test(normalized))
+    .map(([name]) => name);
+  // A memory that only adds a restriction ("payments need my approval") is
+  // safe to keep, as long as it names no address, touches no secret, gives
+  // the agent no directive and contains no wording that relaxes a rule.
+  const restrictiveOnly =
+    signals.length > 0 &&
+    signals.every((s) => s === "money" || s === "authority") &&
+    restrictive.test(normalized) &&
+    !relaxing.test(normalized);
   const quoted = spans.length > 0 && quotation.test(normalized);
   return {
     verdict:
       spans.length && !quoted
         ? "REJECT"
-        : ambiguous || quoted
+        : quoted || (signals.length && !restrictiveOnly)
           ? "REVIEW"
           : "ALLOW",
     spans,
     quoted,
+    signals,
     normalized,
   };
 }

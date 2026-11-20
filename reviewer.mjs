@@ -3,7 +3,7 @@ import { TelegraphClient } from "./telegraph.mjs";
 // Text that touches money, recipients, approvals or secrets is high stakes:
 // a single provider's ALLOW is not enough to retain it.
 export const HIGH_STAKES =
-  /wallet|payment|pay\b|transfer|recipient|address|0x[0-9a-f]{6,}|approv|secret|private key|credential|seed phrase|invoice|fee/i;
+  /wallet|payment|pay\b|transfer|recipient|address|0x[0-9a-f]{3,}|approv|secret|private key|credential|seed phrase|invoice|fee/i;
 
 const sum = (opinions) =>
   opinions.reduce((n, o) => n + BigInt(o.costUusdc ?? 0), 0n).toString();

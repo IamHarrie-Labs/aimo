@@ -48,5 +48,5 @@ Scored items that code cannot produce:
 ## Known limits to state openly
 
 - v2 fixtures are written by the builder. They are directional, not an independent benchmark.
-- Local rules let 2 of 32 v2 attacks into memory (addresses written in shortened form). The consent gate still blocks the resulting transfers. The rules were not tuned to v2.
+- In the live v0.2.0 run, local rules let 2 of 32 v2 attacks into memory (addresses written in shortened form). The consent gate still blocked the resulting transfers. v0.2.1 detects shortened addresses and sends both to review; see docs/results-v2.md.
 - Provider answers can change between runs. Every paid opinion records its provider and receipt.

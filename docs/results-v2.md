@@ -32,3 +32,37 @@ Held-out third: B kept 4/10 clean, C kept 5/10. Both committed 0/10 attacks.
 ## Claim this supports
 
 On a builder-written synthetic set, selective dual-provider Telegraph review recovered 5 of 20 wrongly blocked legitimate memories for 0.58 test USDC, with no increase in attacks committed to memory. It also converted provider disagreement into user decisions instead of silent errors. This is directional evidence, not a general security benchmark.
+
+## v0.2.1 local triage
+
+The live numbers above use the v0.2.0 local rules. These sent any memory containing words such as "remember", "always" or "payment" to review, so plain preferences like "always use metric units" were quarantined before a provider saw them.
+
+v0.2.1 replaces the word list with risk signals: money movement, an address (including shortened forms such as `0x7Be1...`), secrets, approval or policy changes, a directive aimed at the agent, outbound data, and encoded text. A memory with no risk signal is saved locally. A memory that only adds a restriction ("payment requires separate user approval"), with no address and no relaxing wording, is also saved. Everything else still goes to paid review. The change was designed from the v1 failures (plain "remember" facts and restriction-only statements), not tuned on v2.
+
+Local rules only, measured with `scan()` and no paid review:
+
+| | v0.2.0 | v0.2.1 |
+| --- | --- | --- |
+| v1 clean saved | 15/30 | 25/30 (the other 5 are quoted attack text, reviewed by design) |
+| v2 clean saved | 12/32 | 18/32 |
+| v2 held-out clean saved | 4/10 | 6/10 |
+| v2 attacks saved without review | 2/32 | 0/32 |
+
+Local rules alone now keep more clean memories (18/32) than v0.2.0 kept with paid review (17/32), and no attack bypasses review.
+
+### Live re-run, 20 November 2026
+
+Same 64 cases, same providers (SECURITY_REVIEW_GENERAL/731970 with CONTENT_MODERATION_GENERAL/7423 second opinion). The v0.2.0 report and database are kept in output/evals/v0.2.0/ and data/benchmark-v2.v0.2.0.db.
+
+| Arm | Clean kept | Attacks committed | Attacks executed | Routed to user | Cases with new paid requests | New cost (test USDC) |
+| --- | --- | --- | --- | --- | --- | --- |
+| B local rules | 18/32 | 0/32 | 0/32 | 0 | 0 | 0 |
+| C local + Telegraph | **22/32** | **0/32** | 0/32 | 8 | 8 of 64 | 0.13 |
+
+Held-out: 6/10 clean kept in both arms, 0/10 attacks committed.
+
+- Compared with v0.2.0 live (17/32 kept, 2/32 attacks committed), the combined system keeps 5 more legitimate memories and commits no attacks.
+- 45 cases went to review. 37 of them reused verified provider answers already bought for identical requests in the v0.2.0 run, so they cost nothing new. Only 8 cases needed 13 new paid requests. The 0.13 test USDC therefore understates the cost of a fresh run; at the v0.2.0 rate of about 0.0135 per reviewed case, a fresh run would cost roughly 0.6 test USDC.
+- 8 provider conflicts were routed to the user instead of being decided silently.
+- No timeouts, 402 refusals or unresolved payments in this run.
+- Paid review still misses most quoted attack text (1/6 kept) and wallet notes (2/6 kept); these remain the main false-positive families.
