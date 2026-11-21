@@ -9,3 +9,4 @@ output/video/
 test-results/
 .claude/
 output/*.zip
+.vercel
