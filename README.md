@@ -1,5 +1,7 @@
 # AIMO
 
+[![CI](https://github.com/IamHarrie-Labs/aimo/actions/workflows/ci.yml/badge.svg)](https://github.com/IamHarrie-Labs/aimo/actions/workflows/ci.yml)
+
 Agent memory integrity and oversight for Telegraph Season II. AIMO inspects retrieved content, preserves the lineage of persistent memory, enforces explicit action approval and recovers contaminated descendants.
 
 ## Run locally

@@ -363,3 +363,77 @@ test("local triage keeps plain preferences and reviews risky ones", () => {
   ])
     assert.equal(scan(text).verdict, "REVIEW", text);
 });
+
+// Build spec section 8: "chain mismatch rejected". A challenge for another
+// chain, or a Sepolia offer whose signing text names another chain, must be
+// refused before anything is signed.
+test("payment challenges for the wrong chain are refused before signing", async () => {
+  const offerOn = (network, messageNetwork) =>
+    new Response(
+      JSON.stringify({
+        accepts: [
+          {
+            scheme: "escrow",
+            network,
+            payTo: "0x72a70e949362670Bf8bceAd24eFC5b8f950aa08b",
+            extra: {
+              resource: "/v1/ask",
+              message: `Pay {from} nonce {nonce} {validAfter}-{validBefore} Amount: 10000 uUSDC Network: ${messageNetwork}`,
+            },
+          },
+        ],
+      }),
+      { status: 402 },
+    );
+  for (const [network, messageNetwork, error] of [
+    ["eip155:1", "eip155:1", /receiver mismatch/],
+    ["eip155:11155111", "eip155:8453", /Unsafe escrow challenge/],
+  ]) {
+    const client = escrowClient();
+    let signed = 0;
+    await withFetch(
+      async (url, options) => {
+        if (options?.headers?.["X-PAYMENT"]) signed++;
+        return offerOn(network, messageNetwork);
+      },
+      async () => {
+        await assert.rejects(client.assess({ content: ambiguous }), error);
+      },
+    );
+    assert.equal(signed, 0, `nothing signed for ${network}`);
+    assert.equal(client.purchases()[0].status, "not-paid");
+  }
+});
+
+// Build spec section 8: "evaluator produces identical counts on repeated
+// seeded runs". Runs the local-rules arm of the v2 benchmark twice over the
+// frozen fixtures and checks the counts match each other and the report.
+test("the local benchmark arm gives identical counts on repeated runs", async () => {
+  const { readFileSync } = await import("node:fs");
+  const fixtures = JSON.parse(
+    readFileSync("data/fixtures/memory-cases-v2.json", "utf8"),
+  );
+  const run = async () => {
+    const engine = new IntegrityEngine(":memory:", {
+      secret: "benchmark-only-approval-secret-000000000",
+    });
+    const counts = { cleanKept: 0, attacksKept: 0, verdicts: {} };
+    for (const f of fixtures) {
+      const { verdict } = await engine.inspectRetrieved({
+        content: f.content,
+        source: "benchmark://" + f.id,
+        taskId: "Retain factual research without granting new authority",
+      });
+      counts.verdicts[f.id] = verdict;
+      if (verdict === "ALLOW")
+        counts[f.label === "clean" ? "cleanKept" : "attacksKept"]++;
+    }
+    engine.db.close();
+    return counts;
+  };
+  const first = await run();
+  const second = await run();
+  assert.deepEqual(second, first);
+  assert.equal(first.cleanKept, 18);
+  assert.equal(first.attacksKept, 0);
+});

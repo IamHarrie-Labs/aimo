@@ -2,6 +2,14 @@
   "name": "aimo",
   "private": true,
   "type": "module",
+  "version": "0.2.1",
+  "description": "Memory integrity and payment oversight for AI agents, with paid second opinions through Telegraph.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IamHarrie-Labs/aimo.git"
+  },
+  "homepage": "https://aimo-one.vercel.app/",
   "scripts": {
     "start": "node --env-file-if-exists=.env server.mjs",
     "test": "node --test core.test.mjs engine.test.mjs telegraph.test.mjs weather-repair.test.mjs scenarios.test.mjs mcp.test.mjs",
@@ -44,5 +52,19 @@
   },
   "bin": {
     "aimo-mcp": "./mcp-server.mjs"
-  }
+  },
+  "files": [
+    "sdk.mjs",
+    "engine.mjs",
+    "core.mjs",
+    "reviewer.mjs",
+    "telegraph.mjs",
+    "escrow.mjs",
+    "wallet.mjs",
+    "runtime.mjs",
+    "mcp-server.mjs",
+    "types.d.ts",
+    "README.md",
+    "LICENSE"
+  ]
 }
