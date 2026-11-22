@@ -2,7 +2,7 @@
   "name": "aimo",
   "private": true,
   "type": "module",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Memory integrity and payment oversight for AI agents, with paid second opinions through Telegraph.",
   "license": "MIT",
   "repository": {

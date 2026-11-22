@@ -186,7 +186,7 @@ export function createHandler({ engine, tool }) {
       return ok({
         protocolVersion: params?.protocolVersion ?? "2025-06-18",
         capabilities: { tools: {} },
-        serverInfo: { name: "aimo", version: "0.2.1" },
+        serverInfo: { name: "aimo", version: "0.2.2" },
       });
     if (method === "ping") return ok({});
     if (method === "tools/list") return ok({ tools });
