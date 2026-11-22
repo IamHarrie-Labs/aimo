@@ -4,6 +4,10 @@
 
 Agent memory integrity and oversight for Telegraph Season II. AIMO inspects retrieved content, preserves the lineage of persistent memory, enforces explicit action approval and recovers contaminated descendants.
 
+## Try it
+
+The quickest way to check AIMO on your own input, including a paid repair on your own city, is [docs/reproduce.md](docs/reproduce.md). Please share what happened in a [reproduction report](https://github.com/IamHarrie-Labs/aimo/issues/new?template=reproduction.yml), good or bad.
+
 ## Run locally
 
 Requires Node 24 LTS and npm. From a fresh checkout:
@@ -33,7 +37,7 @@ npm run export
 - **MCP server** (`npm run mcp`) so any MCP-capable agent can use AIMO's checkpoints. The server never offers tools that approve actions or settle reviews, so an agent can't approve itself.
 - **Harder v2 benchmark** (64 cases, 7 attack classes, 5 benign classes, held-out split) and **live zero-spend failure scenarios** (`npm run scenarios`).
 
-**Live result (v0.2.1, v2 set, 64 cases):** local rules plus Telegraph review kept 22/32 legitimate memories with 0/32 attacks committed and no unapproved transfers. Local rules alone kept 18/32. The earlier v0.2.0 run kept 17/32 and let 2/32 attacks into memory. Eight provider conflicts were routed to the user. A fresh run costs about 0.6 test USDC; see docs/results-v2.md for cost, answer reuse and limits. Landing page: https://aimo-one.vercel.app/
+**Live result (v0.2.1, v2 set, 64 cases):** local rules plus Telegraph review kept 22/32 legitimate memories with 0/32 attacks committed and no unapproved transfers. Local rules alone kept 18/32, so paid review added 4 legitimate memories, all on the development split (the held-out third was 6/10 in both). The earlier v0.2.0 run kept 17/32 and let 2/32 attacks into memory. Eight provider conflicts were routed to the user. The rerun spent 0.13 test USDC by reusing earlier verified answers, and a fresh run would cost an estimated 0.6; see docs/results-v2.md for cost, answer reuse and limits. Landing page: https://aimo-one.vercel.app/
 
 ## Use from another agent (MCP)
 

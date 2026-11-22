@@ -2,7 +2,9 @@
 
 Unpublished drafts. Post each on a separate date (the rubric needs three dated updates), tag @Telegraphprotoc, and check every number against docs/results-v2.md before posting. Suggested dates leave room before the 1 December deadline.
 
-## Update 1: the problem (post 20–21 November)
+## Update 1: the problem (posted 21 November)
+
+Posted: https://x.com/IamHarrie/status/2124273746206990832 (a longer version of the draft below).
 
 Prompt injection used to end with the chat. Agents with memory carry it forward.
 
@@ -32,7 +34,7 @@ AIMO v0.2.1, measured live on @Telegraphprotoc (64 cases: 32 legitimate memories
 - Local rules only: 18/32 legitimate kept, 0 attacks saved
 - Local + Telegraph review: 22/32 legitimate kept, 0 attacks saved, 0 unapproved payments
 
-A fresh run costs about 0.6 test USDC. The test set is mine, so treat it as directional. Method and failures: https://github.com/IamHarrie-Labs/aimo/blob/main/docs/results-v2.md
+That rerun spent 0.13 test USDC because it reused earlier answers. Buying everything fresh would cost about 0.6. The test set is mine, so treat it as directional. Method and failures: https://github.com/IamHarrie-Labs/aimo/blob/main/docs/results-v2.md
 
 Building an agent with memory or a wallet? Try to break it. Run `npm run scenarios` or plug in the MCP server, and open an issue with any attack that gets through: https://github.com/IamHarrie-Labs/aimo/issues
 

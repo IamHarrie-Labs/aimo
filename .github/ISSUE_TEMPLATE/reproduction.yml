@@ -1,0 +1,61 @@
+name: Reproduction report
+description: Tell us what happened when you ran AIMO, good or bad.
+title: "Reproduction: "
+labels: ["reproduction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying AIMO. Steps are in [docs/reproduce.md](https://github.com/IamHarrie-Labs/aimo/blob/main/docs/reproduce.md). Never paste a private key.
+  - type: dropdown
+    id: level
+    attributes:
+      label: What did you run?
+      options:
+        - "Level 1: tests, replay and scenarios"
+        - "Level 2: my own input (free)"
+        - "Level 3: paid weather repair"
+        - "I plugged AIMO into my own agent"
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: OS, Node version and AIMO commit or version
+      placeholder: "Ubuntu 24.04, Node 24.1, commit abc1234"
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: Your input
+      description: The text you checked, the city you used, or what your agent does.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What happened
+      description: Paste the output or the verdicts. Include any errors.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: receipt
+    attributes:
+      label: Receipt hash (level 3 only)
+  - type: input
+    id: cost
+    attributes:
+      label: Cost and elapsed time (level 3 only)
+      placeholder: "0.01 test USDC, 41 s"
+  - type: textarea
+    id: friction
+    attributes:
+      label: What was confusing or slow?
+  - type: checkboxes
+    id: share
+    attributes:
+      label: Sharing
+      options:
+        - label: AIMO's builder may quote this report publicly.

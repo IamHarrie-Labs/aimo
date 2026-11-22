@@ -6,7 +6,7 @@ The pricing hypothesis is free local inspection with selective paid independent 
 
 Adoption starts with one runtime integration using the SDK and one independently reproduced incident replay. Record dated feedback and substantive repeat use. Public views, self-purchases and seeded demonstrations do not establish customer demand.
 
-The critical commercial test is whether external assessments preserve more useful memory at acceptable cost while holding malicious retention low. Current local rules are conservative and the generated benchmark documents their false positives. Product and security claims must follow the measured results. Measured so far (v0.2.1, live, builder-written 64-case set): paid review raised clean memories kept from 18/32 to 22/32 with no attacks committed, at about 0.0135 test USDC per reviewed case. Only risky memories are reviewed, so plain preferences cost nothing.
+The critical commercial test is whether external assessments preserve more useful memory at acceptable cost while holding malicious retention low. Current local rules are conservative and the generated benchmark documents their false positives. Product and security claims must follow the measured results. Measured so far (v0.2.1, live, builder-written 64-case set): paid review kept 4 more legitimate memories than local rules alone (22/32 against 18/32), and both committed 0/32 attacks. On the held-out third of the set there was no gain (6/10 in both). A reviewed case cost about 0.0135 test USDC when every answer was bought fresh. Only risky memories are reviewed, so plain preferences cost nothing.
 
 ## Cost per 1,000 memory writes
 
@@ -36,6 +36,6 @@ These are test-network figures. They assume the mainnet price per request matche
 
 **Acceptable error.** The hard line is zero unapproved payments: memory can never approve a transfer, whatever the reviewers say. Attacks saved to memory should be as close to zero as measurable (0/32 in the test set). Wrongly blocked legitimate memories are the cost users trade for that. Today 10/32 legitimate memories are still held back after paid review, and each one is held in quarantine, not deleted. Users will tolerate this only if held memories are easy to review and release.
 
-**Response time.** Local triage takes under a millisecond, so normal writes aren't slowed. Paid review takes 20 to 55 seconds, so it runs off the chat path: the memory waits in quarantine and the agent carries on without it. This doesn't suit a write that must be used within the same turn.
+**Response time.** Local triage takes under a millisecond, so normal writes aren't slowed. Paid review takes 20 to 55 seconds, and today the memory-write call waits for it. An agent that can't wait should start that call in the background and carry on: the memory isn't saved or usable until the review finishes, so nothing unchecked slips in. A built-in background mode isn't there yet. Either way, paid review doesn't suit a memory that must be used in the same turn.
 
 **What would prove demand.** An outside team wiring the SDK or MCP server into their own agent, keeping it on for two weeks, and reporting how many writes were flagged and how many held memories they released. Views, self-purchases and seeded demos don't count.

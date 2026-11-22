@@ -19,6 +19,12 @@ try {
     console.log(JSON.stringify(await replay(engine), null, 2));
   else if (command === "weather-repair") {
     const location = process.argv[3] ?? "Lagos";
+    const started = Date.now();
+    // An unrelated memory that the repair must leave alone.
+    const unrelated = engine.importLegacyMemory({
+      text: "The user prefers metric units.",
+      source: "fixture://user-preference",
+    });
     const stale = engine.importLegacyMemory({
       text: `Historical temperature for ${location}: obsolete reading.`,
       source: "fixture://historical-weather",
@@ -31,8 +37,23 @@ try {
       location,
       compromisedId: stale.id,
     });
-    if (!result.recovery.affected.includes(descendant.id) || !engine.verify())
+    const unrelatedKept =
+      !result.recovery.affected.includes(unrelated.id) &&
+      engine.memories().find((r) => r.id === unrelated.id)?.status === "active";
+    if (
+      !result.recovery.affected.includes(descendant.id) ||
+      !unrelatedKept ||
+      !engine.verify()
+    )
       throw new Error("Recovery verification failed");
+    Object.assign(result, {
+      staleMemory: stale.id,
+      dependentMemory: descendant.id,
+      unrelatedMemory: unrelated.id,
+      unrelatedKept,
+      elapsedMs: Date.now() - started,
+      costUsdc: Number(result.costUusdc) / 1e6,
+    });
     mkdirSync("output/evidence", { recursive: true });
     writeFileSync(
       "output/evidence/weather-repair.json",

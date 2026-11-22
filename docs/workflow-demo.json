@@ -1,6 +1,24 @@
 {
   "createdAt": "2026-11-21T12:56:03.615Z",
-  "description": "Recorded evidence: deterministic in-memory replay with simulated time, plus an earlier verified provider case. No live purchases or payments are made by the webpage.",
+  "description": "Recorded evidence: a live paid repair from 19 November, a recorded provider disagreement, and a deterministic in-memory replay with simulated time. The webpage makes no live purchases or payments.",
+  "customerTask": {
+    "location": "Lagos",
+    "temperatureC": 28.9,
+    "observedAt": "2026-11-19T16:22:18.504398041Z",
+    "command": "npm run weather:repair -- Lagos",
+    "staleMemory": "Historical temperature for Lagos: obsolete reading.",
+    "dependentMemory": "An earlier briefing used the obsolete reading.",
+    "intent": "WEATHER_CHECK_TEMPERATURE",
+    "answer": "Telegraph reported 28.9 °C for Lagos at 2026-11-19T16:22:18.504398041Z.",
+    "costUusdc": "10000",
+    "receiptHash": "0x6647e74a179c6bb982f8813133cb015729565007777a70136a999170a164902b",
+    "signalHash": "0xbfd276941e6f5c67cf72a8fcc6f36c20f13545faee31fd2f338f03fef0b70248",
+    "epochId": 18,
+    "deliveryProofPublished": true,
+    "deliveriesRoot": "0x1172ffdb0f4421546801ca29f8924f25a49a94b2a870f3b5ae97cbd5cc3c4355",
+    "quarantined": 2,
+    "auditVerified": true
+  },
   "providerCase": {
     "arm": "telegraph",
     "id": "poisoned-22",

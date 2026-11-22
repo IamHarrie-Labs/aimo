@@ -1,26 +1,61 @@
-# PDF acceptance coverage
+# Acceptance checklist
 
-The live weather repair workflow completes a useful Personal Agent task using a paid observation. The paid security-review path still needs a provider that reliably classifies ambiguous memories. The generative planner routes remain unverified.
+Status for v0.2.1 plus the 21 November updates (CI, packaging, docs). Each row says where the evidence is, so a judge can check it without asking. Last updated 22 November 2026.
 
-| Requirement                             | Implementation and verification                                                                                                              |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Three checkpoints                       | engine.mjs ingress, memory write, and action authorization. Explicit local attacks skip paid review.                                         |
-| Persistent provenance                   | SQLite records and metadata retain source IDs, parent IDs, trust, timestamps, hashes and versions.                                           |
-| Autonomous paid assessment              | Ambiguous ingestion invokes TelegraphClient without a purchase button. Escrow delivery verified live.                                        |
-| Canonical schema and provider discovery | Live public catalog and exact Intent schema read before purchase.                                                                            |
-| Correlated receipts                     | Receipt hash, signal hash, provider and registration IDs, epoch, amount and response hash retained. Signal independently rehashed.           |
-| Consent and safety                      | One-use HMAC approval, exact resource/recipient scope, expiry, amount ceiling, ancestor checks and action idempotency.                       |
-| Real high-stakes test tool              | Sepolia test-USDC self-transfer passed. Console defaults to simulated transfer.                                                              |
-| Delayed replay                          | Simulated three-day timeline and denied action. A historical imported miss exercises post-persistence recovery.                              |
-| Recovery                                | Selective descendants, dependent schedule disabling, snapshots, undo and version restore.                                                    |
-| SDK                                     | sdk.mjs, types.d.ts and runnable sdk-example.mjs.                                                                                            |
-| Evaluation                              | Frozen 30 clean + 30 poisoned synthetic cases. Local and live three-arm results and CSV, with failures and no measured paid uplift.          |
-| Ablations                               | Scripted ingress-only, ingress plus memory and all-gates report.                                                                             |
-| Developer material                      | Reviewer guide, architecture, tutorial, demo script, commercial hypothesis, public update drafts and submission worksheet.                   |
-| UI checks                               | Chromium at 375/768/1280 pixels, zero page errors, screenshots and WebM capture.                                                             |
-| Independent reproduction                | Pending an actual outside developer. Self-run browser checks do not count as independent adoption.                                           |
-| Public source and deployment            | Local source and reviewer package prepared. Public repository, deployment URL, registration and bounties star need operator account actions. |
-| Public updates                          | Drafts prepared. Actual posting and dated engagement remain external activities.                                                             |
-| Final competition submission            | Worksheet prepared. Final mission acceptance, publication links and submission require operator review.                                      |
+## Mission 09 requirements
 
-The live integration meets the transport milestone through escrow. Provider suitability remains a conditional/no-go finding for automatic safe-memory retention: the qualitative provider lacks canonical allow fields, so the paid arm currently has no retention advantage. No security efficacy or adoption claim is inferred from successful payment.
+| Requirement | Status | Evidence |
+| --- | --- | --- |
+| A useful personal-agent task completed with an autonomous Telegraph purchase | Done, live | `npm run weather:repair -- Lagos`: a stale weather memory is replaced using a paid WEATHER_CHECK_TEMPERATURE answer, and the memories built on the stale one are quarantined. Receipt, provider, epoch and cost are in `output/evidence/weather-repair.json`. |
+| Stale answer handled | Tested | `weather-repair.test.mjs`: a stale or missing paid result keeps the old memory and writes nothing new. The live path rejects observations older than 10 minutes. |
+| No budget | Tested | `scenarios.test.mjs`: "no budget refuses before any payment is attempted". |
+| Failed payment | Tested | `scenarios.test.mjs`: refusals before signing release the budget; failures after signing are marked unresolved and never retried automatically (`npm run reconcile`). |
+| Conflicting provider answers | Tested and measured live | `scenarios.test.mjs`: "conflicting provider answers are routed to the user". 8 live conflicts went to the user in the v0.2.1 run. |
+| Chain mismatch | Tested | `scenarios.test.mjs`: "payment challenges for the wrong chain are refused before signing". |
+| Cost per useful outcome | Measured | `docs/results-v2.md`: 0.0135 test USDC per reviewed case and 0.0123 per correct decision (v0.2.0, all answers bought fresh). Cost per 1,000 memory writes is in `docs/commercial-summary.md`. |
+
+## How AIMO works
+
+| Requirement | Status | Evidence |
+| --- | --- | --- |
+| Three checkpoints (reading, saving, acting) | Done | `engine.mjs`: `inspectRetrieved`, `proposeMemory`, `authorizeAction`. |
+| Provenance on every memory | Done | SQLite records keep source and parent ids, trust level, timestamps, hashes and versions. |
+| Paid review only when needed | Done | Local triage first. Plain preferences are saved for free; memories touching money, addresses, secrets or approvals get paid review, with a second opinion when the first is unsure or risky. |
+| Memory can never approve a payment | Tested | One-use signed approval scoped to the exact amount, recipient and resource. "paid risk check can block but never authorise an external effect". |
+| Recovery | Tested | Selective quarantine of descendants, dependent schedules turned off, snapshots, undo and version restore (`engine.test.mjs`, `npm run replay`). |
+| Receipts | Done | Receipt hash, signal hash, provider, epoch, amount and response hash are stored per purchase. One delivery proof is published in `output/evidence/epoch-deliveries.json`. |
+| Spend limits | Done | Per-review and daily caps, reserved before signing (`MAX_REVIEW_UUSDC`, `DAILY_REVIEW_UUSDC`). |
+
+## Evaluation
+
+| Item | Result |
+| --- | --- |
+| Dataset | 64 frozen synthetic cases (32 legitimate, 32 attacks across 7 families), written by the builder. Hash in `output/evals/report-v2.json`. |
+| No protection | 32/32 attacks saved to memory. |
+| Local rules only | 18/32 legitimate kept, 0/32 attacks saved. |
+| Local + Telegraph review | 22/32 legitimate kept, 0/32 attacks saved, 0 unapproved transfers, 8 conflicts sent to the user. |
+| What paid review added | 4 more legitimate memories than local rules alone, all on the development split. On the held-out third both arms kept 6/10. |
+| Cost | The v0.2.1 rerun spent 0.13 test USDC because it reused 37 earlier verified answers. A fresh run would cost an estimated 0.6 test USDC. |
+| Repeatability | The local arm gives identical counts on repeated runs (tested in CI). |
+| Limits | Builder-written cases, Sepolia only, two providers. Treat results as directional. Details in `docs/results-v2.md`. |
+
+## Developer use
+
+| Item | Status | Evidence |
+| --- | --- | --- |
+| Tests in CI | Passing | 37 tests on every push: https://github.com/IamHarrie-Labs/aimo/actions |
+| Installable SDK | Done | `npm i github:IamHarrie-Labs/aimo` (28 kB, 13 files). CI installs the packed SDK into a clean folder on every push. |
+| MCP server | Done | `aimo-mcp` binary, covered by `mcp.test.mjs`. |
+| Docs | Done | README, `docs/tutorial.md`, `docs/reproduce.md`, `docs/architecture.md`, `docs/reviewer-guide.md`, `docs/mainnet-readiness.md`. |
+| Public site | Live | https://aimo-one.vercel.app/ with a recorded walkthrough. It makes no live purchases. |
+
+## Still open
+
+| Item | Status |
+| --- | --- |
+| Outside developer reproduction | Not yet. `docs/reproduce.md` and the "Reproduction report" issue template are ready for one. |
+| Repeat use by an outside developer | Not yet. |
+| Public updates | 1 of 3 posted (21 November): https://x.com/IamHarrie/status/2124273746206990832 |
+| Mission progress | `/claim` and first `/progress` posted on telegraphprotocol/bounties#197. |
+| Mainnet | Not ready. See `docs/mainnet-readiness.md`. |
+| Final submission | Due 1 December 2026, 23:59 UTC. |

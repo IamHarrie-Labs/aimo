@@ -38,7 +38,7 @@ Plain, calm and specific. Say what happens ("keep payments under your approval")
 
 - One screen on desktop; natural scrolling and a full-screen menu on phones.
 - Headline: "Protect AI agents from poisoned memories." Primary action: "Run AIMO locally" (the tutorial). Secondary: "Explore the workflow", a keyboard-accessible dialog.
-- The dialog uses `docs/workflow-demo.json`: the recorded live case `poisoned-22` (providers disagreed, routed to a person, no payment) plus a deterministic local replay. Both are labelled as recorded evidence. The page makes no live requests, purchases or transfers.
+- The dialog uses `docs/workflow-demo.json` and has five steps. It opens with the recorded live weather repair (a stale memory replaced with a paid Telegraph answer, with receipt and delivery proof), then the recorded case `poisoned-22` (providers disagreed, routed to a person, no payment), then a deterministic local replay. All are labelled as recorded evidence. The page makes no live requests, purchases or transfers.
 - Three stats from the v0.2.1 live run link to `docs/results-v2.md`: 22/32 useful memories kept, 0/32 attacks saved, 8 disagreements sent to a person.
 - Every link and button has a touch target of at least 44 px.
 
