@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-19T16:54:39.373Z",
+  "createdAt": "2026-11-25T02:28:16.093Z",
   "node": "https://devnode.telegraphprotocol.com",
   "note": "Live node, throwaway signer, zero spend. Each case must stop before signing a payment.",
   "passed": 5,
@@ -12,7 +12,7 @@
       "error": "Daily budget exceeded",
       "purchaseState": [],
       "signedPayments": 0,
-      "latencyMs": 4006
+      "latencyMs": 2709
     },
     {
       "name": "price above per-request cap",
@@ -20,10 +20,10 @@
       "passed": true,
       "error": "Unsafe escrow challenge",
       "purchaseState": [
-        "unresolved"
+        "not-paid"
       ],
       "signedPayments": 0,
-      "latencyMs": 2092
+      "latencyMs": 1829
     },
     {
       "name": "payment to an unexpected receiver",
@@ -31,10 +31,10 @@
       "passed": true,
       "error": "Escrow receiver mismatch",
       "purchaseState": [
-        "unresolved"
+        "not-paid"
       ],
       "signedPayments": 0,
-      "latencyMs": 4958
+      "latencyMs": 3911
     },
     {
       "name": "intent with no live schema",
@@ -43,7 +43,7 @@
       "error": "Canonical Intent has no live providers",
       "purchaseState": [],
       "signedPayments": 0,
-      "latencyMs": 1642
+      "latencyMs": 29369
     },
     {
       "name": "provider unavailable during memory write",

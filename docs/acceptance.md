@@ -44,7 +44,7 @@ Status for v0.2.1 plus the 21 November updates (CI, packaging, docs). Each row s
 | Item | Status | Evidence |
 | --- | --- | --- |
 | Tests in CI | Passing | 37 tests on every push: https://github.com/IamHarrie-Labs/aimo/actions |
-| Installable SDK | Done | `npm i github:IamHarrie-Labs/aimo` (28 kB, 13 files). CI installs the packed SDK into a clean folder on every push. |
+| Installable SDK | Done | `npm i github:IamHarrie-Labs/aimo` (about 31 kB, 13 files). CI installs the packed SDK into a clean folder on every push. |
 | MCP server | Done | `aimo-mcp` binary, covered by `mcp.test.mjs`. |
 | Docs | Done | README, `docs/tutorial.md`, `docs/reproduce.md`, `docs/architecture.md`, `docs/reviewer-guide.md`, `docs/mainnet-readiness.md`. |
 | Public site | Live | https://aimo-one.vercel.app/ with a recorded walkthrough. It makes no live purchases. |

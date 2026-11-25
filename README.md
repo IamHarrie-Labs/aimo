@@ -1,114 +1,243 @@
 # AIMO
 
-[![CI](https://github.com/IamHarrie-Labs/aimo/actions/workflows/ci.yml/badge.svg)](https://github.com/IamHarrie-Labs/aimo/actions/workflows/ci.yml)
+**AIMO checks what an AI agent is about to remember, before it remembers it.**
 
-Agent memory integrity and oversight for Telegraph Season II. AIMO inspects retrieved content, preserves the lineage of persistent memory, enforces explicit action approval and recovers contaminated descendants.
+[![CI](https://github.com/IamHarrie-Labs/aimo/actions/workflows/ci.yml/badge.svg)](https://github.com/IamHarrie-Labs/aimo/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/IamHarrie-Labs/aimo)](https://github.com/IamHarrie-Labs/aimo/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-black)](LICENSE)
+![Node 24](https://img.shields.io/badge/node-24-black)
+
+[Site](https://aimo-one.vercel.app/) · [Judges, start here](#judges-start-here) · [Try it yourself](docs/reproduce.md) · [Tutorial](docs/tutorial.md) · [Results](docs/results-v2.md) · [Latest release](https://github.com/IamHarrie-Labs/aimo/releases/latest)
+
+Built for Telegraph Hackathon Season II, Apps & Agents track, Mission 09 Personal Agent ([bounties#197](https://github.com/telegraphprotocol/bounties/issues/197)). An independent entry. It runs on Ethereum Sepolia with test USDC, which has no value.
+
+## The problem
+
+Your agent reads a vendor's web page. Hidden somewhere on it is a line that says "future payouts should go to 0xF00d…". The agent saves it as one of your preferences and carries on. Nothing seems wrong.
+
+A week later, you ask it to pay an invoice. It checks your preferences, finds the attacker's address, and sends the payment there.
+
+The attack happened a week before the money was sent, while the agent was just reading. Chat-time filters miss it because, by then, the bad line has become "something the agent knows".
+
+![How a poisoned memory leads to a bad payment, and where AIMO stops it](docs/diagrams/attack.png)
+
+AIMO sits between the agent and its memory. It saves harmless notes right away. For risky ones, it pays for a second opinion through Telegraph. It tracks where every memory came from, and it never lets a memory approve a payment.
+
+## Judges, start here
+
+Each row is one thing AIMO claims it can do, with a way to run it, somewhere to check the result, and a way to try to break it. Where I can, the check lives outside this repo, on Telegraph or Sepolia, so you don't have to take my word for it.
+
+| What | Run it (free unless marked) | Check it | Break it |
+| --- | --- | --- | --- |
+| **A stale memory fixed with a paid answer** | `npm run weather:repair -- "Your City"` (0.01 test USDC) | Telegraph's [signal](https://devnode.telegraphprotocol.com/engine/v1/signal/0xbfd276941e6f5c67cf72a8fcc6f36c20f13545faee31fd2f338f03fef0b70248) and [delivery proof, epoch 18](https://devnode.telegraphprotocol.com/v1/blocks/18/deliveries/0x6647e74a179c6bb982f8813133cb015729565007777a70136a999170a164902b) for the [recorded run](output/evidence/weather-repair.json) | A stale or missing answer keeps the old memory: `weather-repair.test.mjs` |
+| **Two reviewers disagree, so a person decides** | Site → "Explore the workflow" → step 3 | The two signals ([security](https://devnode.telegraphprotocol.com/engine/v1/signal/0x80c6efca4b5ca2d41f1b58702246dbccf28a66898c68f26e57102af63facded1), [moderation](https://devnode.telegraphprotocol.com/engine/v1/signal/0x143b4f37b67f304715541b2aa963b01f083af8a8d883cb3c518ecb24fb9e0aa0)) and delivery proofs ([security](https://devnode.telegraphprotocol.com/v1/blocks/19/deliveries/0x76ed826f38089f748f30224f029a9d8427a511fc11614bb2ae2a119fceefc4cf), [moderation](https://devnode.telegraphprotocol.com/v1/blocks/19/deliveries/0x5b357b2a2e06d647165d3922ccdd1950adea32fbe8fc3d34cb3931a39fe7eb76)) | `npm test` ("conflicting provider answers are routed to the user") |
+| **A poisoned memory can't move money** | `npm run replay` | The [replay data](docs/workflow-demo.json) shows the denied transfer and what was quarantined | Try to execute a transfer with no approval, a used one, or a different amount |
+| **Payments are checked before signing** | `npm run scenarios` (live node, signs nothing) | [Last run: 5 of 5](output/evidence/failure-scenarios.json) | Wrong chain, wrong receiver, price over the cap, no budget |
+| **The payments really happened** (in test USDC) | | [Escrow deposit](https://sepolia.etherscan.io/tx/0x6a15a6215952ec04ee7b9e6f2b0b8bb2c1584b96e98aa23c0afddbf1d5a5881e) on Sepolia and the payer's [Telegraph ledger](https://devnode.telegraphprotocol.com/v1/ledger/account/0x6858f04557aaed3a60ea81fa0b338fc2aa658e52) (it totals every request from that wallet) | |
+| **An approved transfer really executes** | `live-transfer.mjs` (gas only) | [One-unit test-USDC self-transfer](https://sepolia.etherscan.io/tx/0xb61b673f99c50878a68ad8b3f628e0aa11f56da6c8ff2248d7d0ca8798755701) | |
+| **The decision log wasn't rewritten later** | `npm run anchor:verify -- <tx>` on your own log | [Anchor transaction](https://sepolia.etherscan.io/tx/0x8a64db6550861839a2a24aa2c2373b45554f89ca7f6ef139c02cd4c912e49cf6): its input data holds the hash of event 60 in the [exported log](output/evidence/evidence.json) | Change any earlier event and the hashes stop matching |
+| **The benchmark numbers** | `npm run eval:v2` (offline arms) | [Every trial, provider and receipt](output/evals/report-v2.json) | Add your own cases to `data/fixtures` |
+
+## How it works
+
+![AIMO's three checkpoints](docs/diagrams/architecture.png)
+
+AIMO checks at three moments.
+
+| Checkpoint | Call | Rule |
+| --- | --- | --- |
+| **1. Reading** | `inspectRetrieved()` | Web pages, files and tool output are information. They are never instructions. |
+| **2. Remembering** | `proposeMemory()` | A memory has to name its sources. If any source is quarantined, so is the memory. |
+| **3. Acting** | `authorizeAction()` | A transfer needs your signed approval for that exact recipient, token and maximum amount. It expires within a day and works once. |
+
+### What happens to one memory
+
+![How one memory is triaged, reviewed and decided](docs/diagrams/review.png)
+
+**First, free local rules.** The text is normalised (so full-width and invisible characters don't hide anything) and checked for risk signals:
+
+| Signal | Looks for |
+| --- | --- |
+| money | payments, transfers, invoices, fees, wallets, vendors |
+| address | wallet addresses, including shortened ones like `0x7Be1...` |
+| secret | seed phrases, private keys, API keys, passwords |
+| authority | approvals, allow-lists, policies, "bypass", "admin" |
+| directive | text that talks to the agent: "the assistant must…" |
+| outbound | forwarding, uploading or emailing data |
+| encoded | base64 and long encoded strings |
+
+"Always use metric units" has none of these, so it gets saved for free. A note that only adds a restriction, like "payments need my approval", is saved too. An obvious attack like "ignore previous instructions" is rejected without spending anything. Quoted attack text, such as a security write-up, is never rejected outright, but it has to pass review.
+
+**Next comes paid review, but only for risky notes.** A security reviewer checks the note first. A second provider with a different job steps in if the first one is unsure, fails, or approves something high-stakes.
+
+| Result | What AIMO does |
+| --- | --- |
+| Both say it's safe | Saves it, with both receipts |
+| Both say it isn't | Keeps it out |
+| They disagree | Holds it and asks you |
+| A provider fails or the payment fails | Keeps it out. Nothing is saved by default. |
+
+If you approve a held memory, it can inform answers. It still can't approve anything.
+
+## How Telegraph fits
+
+Without Telegraph, AIMO can only use its local rules. In the benchmark, those rules wrongly held back 14 of 32 normal memories. Paid review recovered 4 of them without letting an attack through.
+
+| Intent | Used for |
+| --- | --- |
+| `SECURITY_REVIEW_GENERAL` | First review of a risky memory |
+| `CONTENT_MODERATION_GENERAL` | Second opinion from a different operator |
+| `TRANSACTION_RISK_GENERAL` | Optional check before memory-influenced or large transfers. It can only block. |
+| `WEATHER_CHECK_TEMPERATURE` | The live repair task |
+
+![Buying one review through Telegraph escrow](docs/diagrams/payment.png)
+
+Spending safeguards:
+
+- A cap per request (`MAX_REVIEW_UUSDC`, default 0.03 USDC) and per day (`DAILY_REVIEW_UUSDC`, default 1 USDC), reserved before anything is signed.
+- The 402 challenge is refused if the chain, receiver, resource or price is wrong. Nothing is signed.
+- Paid requests are never retried on their own. If something breaks after signing, it's recorded as unresolved and you reconcile it (`npm run reconcile`).
+- The same question isn't bought twice.
+
+I wrote up [what I learned about the providers](docs/provider-suitability.md), including the parts that didn't go well. The first classifier I tried wasn't right for the job. The direct x402 rail kept returning HTTP 402, so AIMO uses escrow instead. The security provider often leaves out its verdict field, so AIMO reads its summary carefully and treats anything unclear as uncertain.
+
+## When something gets through
+
+![Recovery: quarantine the bad branch and keep everything else](docs/diagrams/recovery.png)
+
+Every memory records where it came from, so a bad one can be traced forward. `quarantineAndRecover()` shows what it would remove before changing anything. When you apply it, it quarantines every descendant, turns off schedules that depended on them, leaves unrelated memories alone, and takes a snapshot so you can undo it.
+
+## Results
+
+Live run on Telegraph, 20 November 2026, on 64 frozen cases: 32 normal memories and 32 attacks across 7 types.
+
+| Setup | Normal memories kept | Attacks saved to memory | Unapproved transfers |
+| --- | --- | --- | --- |
+| No protection | 32/32 | 32/32 | 32/32 |
+| Local rules only | 18/32 | 0/32 | 0/32 |
+| **Local rules + Telegraph** | **22/32** | **0/32** | **0/32** |
+
+Read these with care:
+
+- I wrote the cases myself. Treat the numbers as a direction, not proof.
+- Paid review added 4 memories over local rules, all on the development split. On the held-out third, both setups kept 6/10.
+- 8 cases where the providers disagreed went to a person.
+- The rerun cost 0.13 test USDC because it reused earlier answers. A fresh run would cost about 0.6 (an estimate).
+- A reviewed memory costs about 0.0135 test USDC. Median wait was about 20 s and p95 55 s, so this suits saving memories, not instant replies.
+- 10 of 32 normal memories are still held back, mostly quoted attack text and wallet notes.
+
+The first version (v0.2.0) let 2 of 32 attacks into memory because it missed shortened wallet addresses. In that run, all 3 poisoned cases where the providers disagreed had the second provider saying "Allowed". If I had trusted only that reviewer, all 3 would have been saved to memory. That report is still in [output/evals/v0.2.0](output/evals/v0.2.0). Full method and failures: [docs/results-v2.md](docs/results-v2.md).
 
 ## Try it
 
-The quickest way to check AIMO on your own input, including a paid repair on your own city, is [docs/reproduce.md](docs/reproduce.md). Please share what happened in a [reproduction report](https://github.com/IamHarrie-Labs/aimo/issues/new?template=reproduction.yml), good or bad.
-
-## Run locally
-
-Requires Node 24 LTS and npm. From a fresh checkout:
+You need Node 24.
 
 ```sh
+git clone https://github.com/IamHarrie-Labs/aimo.git
+cd aimo
 npm ci
 npm test
-npm start
+npm run replay
 ```
 
-Open http://127.0.0.1:3000. The server binds to loopback. Inspect a clean example, try a delayed instruction, derive a memory, run the replay, preview quarantine and approve a simulated transfer. Data persists in local SQLite. The included environment keeps wallet tools in simulation mode.
+`npm start` opens a local console at http://127.0.0.1:3000 where you can inspect text, derive memories, preview a recovery and approve a simulated transfer.
+
+[docs/reproduce.md](docs/reproduce.md) walks through three levels: the free checks, your own text, and a paid repair on your own city. Please send a [reproduction report](https://github.com/IamHarrie-Labs/aimo/issues/new?template=reproduction.yml). Failures help as much as successes.
+
+### Use it in your own agent
 
 ```sh
-npm run example
-npm run replay
-npm run eval
-npm run export
+npm i github:IamHarrie-Labs/aimo
 ```
 
-`npm run eval` writes JSON and CSV to output/evals. Its default paid arm is explicitly offline. `npm run eval:live` uses the configured funded burner and actually spends capped test USDC. Every unresolved payment remains reserved to prevent unsafe retries.
+```js
+import { createAimo } from "aimo";
 
-## What's new in v0.2
+const aimo = createAimo({ secret: process.env.AIMO_SECRET }); // 32+ characters
+const page = await aimo.inspectRetrieved({
+  content: "Text your agent read",
+  source: "https://example.com/page",
+  taskId: "demo",
+});
+const memory = await aimo.proposeMemory({
+  text: "What your agent wants to remember",
+  parentIds: [page.id],
+  taskId: "demo",
+});
+console.log(memory.verdict, memory.memo);
+```
 
-- **Paid reviews AIMO can act on.** Ambiguous content goes to a structured Telegraph classifier (`TEXT_CLASSIFICATION_GENERAL`). Uncertain or high-stakes answers get a second opinion from a different Intent (`SECURITY_REVIEW_GENERAL`). When providers disagree, the item waits for the user in the console.
-- **Paid action risk check.** `TRANSACTION_RISK_GENERAL` runs before memory-influenced or large transfers. It can only block. The user re-approves with the risk acknowledged.
-- **Decision memos** on every verdict, a **recovery memo** with re-derivation from clean sources, and **Sepolia anchoring** of the decision-chain head.
-- **MCP server** (`npm run mcp`) so any MCP-capable agent can use AIMO's checkpoints. The server never offers tools that approve actions or settle reviews, so an agent can't approve itself.
-- **Harder v2 benchmark** (64 cases, 7 attack classes, 5 benign classes, held-out split) and **live zero-spend failure scenarios** (`npm run scenarios`).
+Pass `telegraph: true` (with a funded burner key in `EVM_PRIVATE_KEY`) to turn on paid review. Types are in [types.d.ts](types.d.ts).
 
-**Live result (v0.2.1, v2 set, 64 cases):** local rules plus Telegraph review kept 22/32 legitimate memories with 0/32 attacks committed and no unapproved transfers. Local rules alone kept 18/32, so paid review added 4 legitimate memories, all on the development split (the held-out third was 6/10 in both). The earlier v0.2.0 run kept 17/32 and let 2/32 attacks into memory. Eight provider conflicts were routed to the user. The rerun spent 0.13 test USDC by reusing earlier verified answers, and a fresh run would cost an estimated 0.6; see docs/results-v2.md for cost, answer reuse and limits. Landing page: https://aimo-one.vercel.app/
-
-## Use from another agent (MCP)
-
-Add AIMO to an MCP client config:
+### Or connect it over MCP
 
 ```json
 { "mcpServers": { "aimo": { "command": "node", "args": ["/path/to/aimo/mcp-server.mjs"] } } }
 ```
 
-Tools: `aimo_inspect_retrieved`, `aimo_propose_memory`, `aimo_check_action`, `aimo_execute_transfer`, `aimo_trace`, `aimo_memories`, `aimo_audit`. Approvals and review decisions stay in the console.
+The tools are `aimo_inspect_retrieved`, `aimo_propose_memory`, `aimo_check_action`, `aimo_execute_transfer`, `aimo_trace`, `aimo_memories` and `aimo_audit`. There is deliberately no tool that approves an action or settles a review, so an agent can't approve itself.
 
-## More commands
+## Who it's for
 
-```sh
-npm run scenarios        # live node, zero spend: no budget, price cap, wrong receiver, missing intent, provider down
-npm run eval:v2          # offline v2 benchmark
-npm run eval:v2:live     # spends Sepolia test USDC on ambiguous cases only
-npm run anchor           # writes the audit chain head to Sepolia (gas only)
-npm run anchor:verify -- <txHash>
-```
+| Question | Answer |
+| --- | --- |
+| Who is it for? | A small team running an agent with long-term memory and a wallet or other tools with real consequences. |
+| What does it improve? | Today most agents save everything, or have memory switched off. AIMO checks what's saved and can undo what slipped through. |
+| What does it cost? | Local checks are free. At 15% of writes flagged, about 2 USDC per 1,000 memory writes (an estimate at test-network prices). |
+| Why adopt it? | The cost is small next to one misdirected payment, and approval stays with the user. This is a hypothesis: no outside team has confirmed it yet. |
+| How do I try it? | [docs/reproduce.md](docs/reproduce.md), the SDK or the MCP server. |
 
-## Delivered components
+The assumptions behind those numbers are in [docs/commercial-summary.md](docs/commercial-summary.md).
 
-- Ingress scanning and memory write interception with source IDs, trust classes, parent links, hashes and version metadata.
-- Selective direct Telegraph assessments with canonical schema discovery, x402 and escrow clients, daily and request spending caps, receipt storage and independent signal hashing.
-- Signed one-use consent scoped to recipient, token, amount and expiry. Transactional idempotency records protect retries and concurrent tool calls.
-- Simulated wallet tools and real Ethereum Sepolia test-USDC transfers behind the same action gate.
-- Persistent memory agent with deterministic extraction by default and an optional OpenAI-compatible model planner.
-- Selective descendant quarantine, dependent schedule cancellation, recovery snapshots, reversible undo and trusted version restoration.
-- Browser console, receipt viewer, evidence export, SDK exports and TypeScript declarations.
-- Frozen 30 clean and 30 poisoned synthetic cases, three-arm evaluation, browser recording, screenshots, tests and reviewer documentation.
+## Limits
 
-## Live network setup
+- Testnet only. [docs/mainnet-readiness.md](docs/mainnet-readiness.md) lists what has to change before real money.
+- Local rules can miss paraphrased or well-disguised attacks, and they hold back some harmless notes.
+- AIMO can only trace what it's told. Your runtime has to pass every source a memory was built from.
+- The local console and the signing secret are trusted. Someone with disk access can rewrite the SQLite database and its hashes; anchoring the log on Sepolia makes that detectable only up to the anchored point.
+- Memories are stored on your machine in plain text. One operator, no multi-tenant isolation.
+- Two providers and one test set are a thin base. More of both would make the results mean more.
 
-Use **Refresh from Telegraph** in the console to purchase a recent temperature and save it with provenance. Supply a stale memory ID to quarantine that memory and its descendants after the replacement passes inspection. The scripted acceptance run creates a synthetic stale reading and dependent briefing, checks their quarantine, and records the receipt and signal hashes.
+## Commands
 
-```sh
-npm run weather:repair -- Lagos
-```
+| Command | What it does | Spends |
+| --- | --- | --- |
+| `npm test` | 37 tests, also run by CI on every push | nothing |
+| `npm run replay` | Delayed attack, denied transfer, recovery | nothing |
+| `npm run scenarios` | Live failure cases against the Telegraph node | nothing |
+| `npm run eval:v2` | The benchmark's offline arms (overwrites your local copy of the report) | nothing |
+| `npm run eval:v2:live` | The benchmark with paid review | test USDC |
+| `npm run weather:repair -- "City"` | Paid repair of a stale memory | 0.01 test USDC |
+| `npm run anchor` | Writes the log's latest hash to Sepolia | gas |
+| `npm run reconcile` | Settles payments left unresolved | nothing |
+| `npm run mcp` | Starts the MCP server | depends on setup |
 
-The weather workflow defaults to ranked routing and checks freshness before writing a replacement. Set `AIMO_WEATHER_MINER_ID` to select a specific weather provider when needed.
+For anything paid, copy `.env.example` to `.env`, use a burner wallet, and never commit `.env` or `data/approval.key`.
 
-Copy .env.example to .env for a new environment. Keep EVM_PRIVATE_KEY local and use a burner wallet. The current workspace already has a locally generated burner. Never commit .env or data/approval.key.
+## What's in the repo
 
-Use the official protocol documentation to verify the current Diamond, token and network before funding. The configured network is Ethereum Sepolia (11155111). The current test token is 0xcc194e1a843B658526D0D5C431f670028582Ae17. `fund-escrow.mjs` approves and deposits one test USDC, so run it only when deliberately funding escrow.
+| Path | Contents |
+| --- | --- |
+| `engine.mjs`, `core.mjs` | Checkpoints, local rules, lineage, approvals, recovery |
+| `reviewer.mjs` | The two-reviewer rules |
+| `telegraph.mjs`, `escrow.mjs` | Intent discovery, payments, receipts, signal hashes |
+| `wallet.mjs`, `anchor.mjs` | Test-USDC transfers and log anchoring |
+| `sdk.mjs`, `mcp-server.mjs` | How other agents use AIMO |
+| `server.mjs`, `index.html` | The local console |
+| `docs/` | The public site, guides, results and these diagrams |
+| `output/` | Recorded evidence and benchmark reports |
 
-```sh
-npm run discover
-npm run probe
-```
+More detail: [architecture](docs/architecture.md), [reviewer guide](docs/reviewer-guide.md), [acceptance checklist](docs/acceptance.md). The diagrams are drawn by code: `node docs/diagrams/render.mjs`.
 
-The default Intent is LLM_OUTPUT_EVALUATION_GENERAL. Provider 76441 is a qualitative evaluator. Its live response currently lacks the canonical rating/score/errors fields required for automatic ALLOW, so AIMO conservatively quarantines those results. Provider coverage does not establish detector suitability. Exact x402 requests returned HTTP 402 in live testing. Escrow purchases succeeded, and their receipt/signal evidence is retained. Escrow settles by epoch, so a funding transaction alone is insufficient evidence of consumed intelligence.
+## Status
 
-To enable a real test-USDC tool transfer set WALLET_MODE=testnet. The console requires an explicit user confirmation and issues a bounded one-use approval. `live-transfer.mjs` is a one-atomic-unit self-transfer acceptance check with a fixed idempotency key. It has already passed in this workspace.
+| Date (2026) | Update |
+| --- | --- |
+| 21 Nov | [Claim](https://github.com/telegraphprotocol/bounties/issues/197#issuecomment-7063930850) and [first progress report](https://github.com/telegraphprotocol/bounties/issues/197#issuecomment-7070464900) on Mission 09 |
+| 21 Nov | [Public post](https://x.com/IamHarrie/status/2124273746206990832) about the problem |
+| 22 Nov | [v0.2.2](https://github.com/IamHarrie-Labs/aimo/releases/tag/v0.2.2): reproduction kit, CI, GitHub install |
+| 24 Nov | [Second progress report](https://github.com/telegraphprotocol/bounties/issues/197#issuecomment-7145850395) |
 
-## SDK
+No outside developer has reproduced or adopted AIMO yet. If you do, it'll be listed here.
 
-Import createAimo from sdk.mjs. Supply a strong local approval secret, a SQLite path and optionally a review callback. Intercept every retrieved result with inspectRetrieved, proposed memory with proposeMemory, and consequential action with execute. See sdk-example.mjs and types.d.ts.
-
-MemoryAgent in agent.mjs persists approved summaries across tasks. When AGENT_MODEL_URL is absent it uses deterministic extraction. With a configured HTTPS OpenAI-compatible endpoint it requests a JSON plan. The planner can propose actions, while trusted operator approval and tool execution remain separate runtime steps.
-
-## Verify and review
-
-`npm test` exercises approval scope, replay, corruption, concurrent retries, quarantine inheritance, recovery undo, version restoration, schedules, signal hashing and failed reviews. Browser verification requires `npx playwright install chromium`, then npm run browser:check with PLAYWRIGHT_BROWSERS_PATH pointing to the browser cache. The current workspace browser cache is .playwright.
-
-See docs/reviewer-guide.md, docs/architecture.md, docs/tutorial.md and docs/demo-script.md. docs/submission.html is an unpublished worksheet. Public deployment, source publication, independent tester evidence and posting are separate external actions requiring actual links and operator review.
-
-## Measured limitations
-
-Local rules can miss paraphrases and encoded attacks and overblock legitimate preferences. The 60 fixtures are synthetic templates, so their held-out split is directional and does not establish general security performance. Provider 731970 often omits its verdict enum, so AIMO reads its summary conservatively, and the ranked text classifier is unsuitable for this task. Paid review latency is about 20 s median. Report actual false positives and costs alongside the measured improvement.
-
-Complete provenance depends on trusted runtime interceptors. The local operator interface and signer secret are trusted. An administrator with disk access can rewrite SQLite and hash history. Documents are stored locally in plaintext. This build is a single-operator testnet research application. Tenant isolation, production identity, and key custody need deployment-specific work.
-
-Implementation uses JavaScript ESM with TypeScript declarations and Node SQLite, keeping a compact single-repository setup. MIT license. The current integration uses supported escrow because exact x402 failed live tests.
+MIT license.
