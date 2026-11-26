@@ -57,7 +57,7 @@ Status for v0.2.2 plus the 26 November updates (wider address detection, with/wi
 | --- | --- |
 | Outside developer reproduction | Not yet. `docs/reproduce.md` and the "Reproduction report" issue template are ready for one. |
 | Repeat use by an outside developer | Not yet. |
-| Public updates | 1 of 3 posted (21 November): https://x.com/IamHarrie/status/2124273746206990832 |
+| Public updates | 2 of 3 posted: https://x.com/IamHarrie/status/2124273746206990832 (21 November) and https://x.com/IamHarrie/status/2125974873713385740 (26 November) |
 | Mission progress | `/claim` and first `/progress` posted on telegraphprotocol/bounties#197. |
 | Mainnet | Not ready. See `docs/mainnet-readiness.md`. |
 | Final submission | Due 1 December 2026, 23:59 UTC. |
