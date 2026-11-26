@@ -1,5 +1,9 @@
 # Changes
 
+## Unreleased, November 26, 2026
+
+Wallet address detection now covers Solana and other base58 addresses (32 to 44 characters) and shortened forms such as `7xKX...AsU`, alongside EVM and Bitcoin. Before this, a memory like "Delta Studio now uses 7xKX...AsU" with no money word was saved without review. The shared pattern lives in `address.mjs` and feeds both the local risk scan and the high-stakes test that asks for a second reviewer. Benchmark counts are unchanged (local rules 18/32 kept, 0/32 attacks). Offline benchmark runs now write `*-offline` files instead of overwriting the live report. Added `docs/with-without-telegraph.md`, which compares no protection, local rules only, and local rules plus Telegraph.
+
 ## v0.2.1, November 20, 2026
 
 Replaced the local "ambiguous word" list with risk signals (money, addresses including shortened forms, secrets, approval changes, agent directives, outbound data, encoded text). Plain preferences are now saved locally; restriction-only statements are saved; everything else still goes to paid review. Offline: v2 clean saved by local rules rose from 12/32 to 18/32 (held-out 4/10 to 6/10), and attacks saved without review fell from 2/32 to 0/32. Added a triage regression test. Live v2 re-run: local plus Telegraph kept 22/32 clean memories (v0.2.0: 17/32) with 0/32 attacks committed (v0.2.0: 2/32); 37 of 45 reviewed cases reused earlier verified answers, 13 new paid requests cost 0.13 test USDC.

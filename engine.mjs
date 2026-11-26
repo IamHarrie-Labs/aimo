@@ -1,5 +1,6 @@
 import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
 import { Aimo, hash } from "./core.mjs";
+import { WALLET_ADDRESS } from "./address.mjs";
 
 const attackPatterns = [
   /ignore.{0,30}(instruction|previous)/gi,
@@ -21,7 +22,7 @@ const quotation =
 const riskSignals = {
   money:
     /\b(pay(?:s|ment|ments|ing|out|outs|ee)?|paid|transfer\w*|send|sent|wire\w*|fees?|refund\w*|payroll|invoice\w*|deposit\w*|withdraw\w*|usdc|usdt|eth|funds?|treasury|vendors?|swap\w*|bridg\w*|wallets?|recipients?|settle\w*|top-?ups?|rebalanc\w*)\b/i,
-  address: /\b0x[0-9a-f]{3,}|\b(?:bc1[a-z0-9]{20,}|[13][a-km-zA-HJ-NP-Z1-9]{25,34})\b/i,
+  address: WALLET_ADDRESS,
   secret:
     /seed phrase|mnemonic|private key|api keys?|secret|credential|password|keystore|access token|auth token|bearer token|\bkeys\b/i,
   authority:

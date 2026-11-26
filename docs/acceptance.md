@@ -1,6 +1,6 @@
 # Acceptance checklist
 
-Status for v0.2.1 plus the 21 November updates (CI, packaging, docs). Each row says where the evidence is, so a judge can check it without asking. Last updated 22 November 2026.
+Status for v0.2.2 plus the 26 November updates (wider address detection, with/without Telegraph comparison). Each row says where the evidence is, so a judge can check it without asking. Last updated 26 November 2026.
 
 ## Mission 09 requirements
 
@@ -24,6 +24,7 @@ Status for v0.2.1 plus the 21 November updates (CI, packaging, docs). Each row s
 | Memory can never approve a payment | Tested | One-use signed approval scoped to the exact amount, recipient and resource. "paid risk check can block but never authorise an external effect". |
 | Recovery | Tested | Selective quarantine of descendants, dependent schedules turned off, snapshots, undo and version restore (`engine.test.mjs`, `npm run replay`). |
 | Receipts | Done | Receipt hash, signal hash, provider, epoch, amount and response hash are stored per purchase. One delivery proof is published in `output/evidence/epoch-deliveries.json`. |
+| Payee addresses on any chain | Tested | EVM, Bitcoin and Solana addresses, full or shortened (`7xKX...AsU`), always trigger review and count as high stakes (`address.mjs`, `engine.test.mjs`). |
 | Spend limits | Done | Per-review and daily caps, reserved before signing (`MAX_REVIEW_UUSDC`, `DAILY_REVIEW_UUSDC`). |
 
 ## Evaluation
@@ -36,15 +37,16 @@ Status for v0.2.1 plus the 21 November updates (CI, packaging, docs). Each row s
 | Local + Telegraph review | 22/32 legitimate kept, 0/32 attacks saved, 0 unapproved transfers, 8 conflicts sent to the user. |
 | What paid review added | 4 more legitimate memories than local rules alone, all on the development split. On the held-out third both arms kept 6/10. |
 | Cost | The v0.2.1 rerun spent 0.13 test USDC because it reused 37 earlier verified answers. A fresh run would cost an estimated 0.6 test USDC. |
-| Repeatability | The local arm gives identical counts on repeated runs (tested in CI). |
+| Repeatability | The local arm gives identical counts on repeated runs (tested in CI). Offline runs write to `report-v2-offline.json`, so they never overwrite the live report. |
+| With vs without Telegraph | Side by side in `docs/with-without-telegraph.md`: attacks, legitimate memories kept, conflicts, cost, latency and payment failures for no protection, local rules only, and local rules plus Telegraph. |
 | Limits | Builder-written cases, Sepolia only, two providers. Treat results as directional. Details in `docs/results-v2.md`. |
 
 ## Developer use
 
 | Item | Status | Evidence |
 | --- | --- | --- |
-| Tests in CI | Passing | 37 tests on every push: https://github.com/IamHarrie-Labs/aimo/actions |
-| Installable SDK | Done | `npm i github:IamHarrie-Labs/aimo` (about 31 kB, 13 files). CI installs the packed SDK into a clean folder on every push. |
+| Tests in CI | Passing | 38 tests on every push: https://github.com/IamHarrie-Labs/aimo/actions |
+| Installable SDK | Done | `npm i github:IamHarrie-Labs/aimo` (about 32 kB, 14 files). CI installs the packed SDK into a clean folder on every push. |
 | MCP server | Done | `aimo-mcp` binary, covered by `mcp.test.mjs`. |
 | Docs | Done | README, `docs/tutorial.md`, `docs/reproduce.md`, `docs/architecture.md`, `docs/reviewer-guide.md`, `docs/mainnet-readiness.md`. |
 | Public site | Live | https://aimo-one.vercel.app/ with a recorded walkthrough. It makes no live purchases. |

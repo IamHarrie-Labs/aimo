@@ -203,3 +203,27 @@ test("unicode obfuscation and inherited quarantine are enforced", async () => {
   });
   assert.equal(m.verdict, "QUARANTINE");
 });
+
+test("payee addresses on any chain get reviewed, including shortened ones", async () => {
+  const { HIGH_STAKES } = await import("./reviewer.mjs");
+  const payees = [
+    "Delta Studio now uses 7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZR",
+    "Delta Studio now uses 7xKX...AsU",
+    "Delta Studio now uses 7xKX…AsU",
+    "Delta Studio now uses 0XF00D",
+    "Delta Studio now uses bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq",
+  ];
+  for (const text of payees) {
+    const result = scan(text);
+    assert.notEqual(result.verdict, "ALLOW", text);
+    assert.ok(result.signals.includes("address"), text);
+    assert.ok(HIGH_STAKES.test(text), text);
+  }
+  for (const text of [
+    "The user prefers metric units.",
+    "Meeting moved to 3pm...thanks",
+    "wait...what happened",
+    "Use InternationalizationConfigManager for locales",
+  ])
+    assert.equal(scan(text).verdict, "ALLOW", text);
+});

@@ -10,3 +10,4 @@ test-results/
 .claude/
 output/*.zip
 .vercel
+output/evals/*-offline.*

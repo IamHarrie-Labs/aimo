@@ -1,9 +1,14 @@
+import { WALLET_ADDRESS } from "./address.mjs";
 import { TelegraphClient } from "./telegraph.mjs";
 
 // Text that touches money, recipients, approvals or secrets is high stakes:
 // a single provider's ALLOW is not enough to retain it.
-export const HIGH_STAKES =
-  /wallet|payment|pay\b|transfer|recipient|address|0x[0-9a-f]{3,}|approv|secret|private key|credential|seed phrase|invoice|fee/i;
+const STAKES_WORDS =
+  /wallet|payment|pay\b|transfer|recipient|address|approv|secret|private key|credential|seed phrase|invoice|fee/i;
+// Shaped like a RegExp for callers: .test() is all the reviewer uses.
+export const HIGH_STAKES = {
+  test: (text) => STAKES_WORDS.test(text) || WALLET_ADDRESS.test(text),
+};
 
 const sum = (opinions) =>
   opinions.reduce((n, o) => n + BigInt(o.costUusdc ?? 0), 0n).toString();

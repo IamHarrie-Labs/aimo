@@ -186,7 +186,9 @@ const report = {
   ],
 };
 mkdirSync("output/evals", { recursive: true });
-const stem = set === "v1" ? "report" : `report-${set}`;
+// Offline runs write to *-offline files so they never overwrite live evidence.
+const suffix = live ? "" : "-offline";
+const stem = (set === "v1" ? "report" : `report-${set}`) + suffix;
 writeFileSync(`output/evals/${stem}.json`, JSON.stringify(report, null, 2));
 const cols = [
   "arm",
@@ -205,7 +207,7 @@ const cols = [
   "conflict",
 ];
 writeFileSync(
-  `output/evals/${set === "v1" ? "trials" : `trials-${set}`}.csv`,
+  `output/evals/${set === "v1" ? "trials" : `trials-${set}`}${suffix}.csv`,
   cols.join(",") +
     "\n" +
     trials.map((r) => cols.map((c) => r[c]).join(",")).join("\n") +

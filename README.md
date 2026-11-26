@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-black)](LICENSE)
 ![Node 24](https://img.shields.io/badge/node-24-black)
 
-[Site](https://aimo-one.vercel.app/) · [Judges, start here](#judges-start-here) · [Try it yourself](docs/reproduce.md) · [Tutorial](docs/tutorial.md) · [Results](docs/results-v2.md) · [Latest release](https://github.com/IamHarrie-Labs/aimo/releases/latest)
+[Site](https://aimo-one.vercel.app/) · [Judges, start here](#judges-start-here) · [Try it yourself](docs/reproduce.md) · [Tutorial](docs/tutorial.md) · [Results](docs/results-v2.md) · [With vs without Telegraph](docs/with-without-telegraph.md) · [Latest release](https://github.com/IamHarrie-Labs/aimo/releases/latest)
 
 Built for Telegraph Hackathon Season II, Apps & Agents track, Mission 09 Personal Agent ([bounties#197](https://github.com/telegraphprotocol/bounties/issues/197)). An independent entry. It runs on Ethereum Sepolia with test USDC, which has no value.
 
@@ -37,6 +37,7 @@ Each row is one thing AIMO claims it can do, with a way to run it, somewhere to 
 | **An approved transfer really executes** | `live-transfer.mjs` (gas only) | [One-unit test-USDC self-transfer](https://sepolia.etherscan.io/tx/0xb61b673f99c50878a68ad8b3f628e0aa11f56da6c8ff2248d7d0ca8798755701) | |
 | **The decision log wasn't rewritten later** | `npm run anchor:verify -- <tx>` on your own log | [Anchor transaction](https://sepolia.etherscan.io/tx/0x8a64db6550861839a2a24aa2c2373b45554f89ca7f6ef139c02cd4c912e49cf6): its input data holds the hash of event 60 in the [exported log](output/evidence/evidence.json) | Change any earlier event and the hashes stop matching |
 | **The benchmark numbers** | `npm run eval:v2` (offline arms) | [Every trial, provider and receipt](output/evals/report-v2.json) | Add your own cases to `data/fixtures` |
+| **What Telegraph adds over local rules** | | [Side-by-side comparison](docs/with-without-telegraph.md): same cases with no protection, local rules only, and local rules plus Telegraph, including cost and failures | |
 
 ## How it works
 
@@ -59,7 +60,7 @@ AIMO checks at three moments.
 | Signal | Looks for |
 | --- | --- |
 | money | payments, transfers, invoices, fees, wallets, vendors |
-| address | wallet addresses, including shortened ones like `0x7Be1...` |
+| address | wallet addresses on EVM chains, Bitcoin and Solana, including shortened ones like `0x7Be1...` or `7xKX...AsU` |
 | secret | seed phrases, private keys, API keys, passwords |
 | authority | approvals, allow-lists, policies, "bypass", "admin" |
 | directive | text that talks to the agent: "the assistant must…" |
@@ -202,10 +203,10 @@ The assumptions behind those numbers are in [docs/commercial-summary.md](docs/co
 
 | Command | What it does | Spends |
 | --- | --- | --- |
-| `npm test` | 37 tests, also run by CI on every push | nothing |
+| `npm test` | 38 tests, also run by CI on every push | nothing |
 | `npm run replay` | Delayed attack, denied transfer, recovery | nothing |
 | `npm run scenarios` | Live failure cases against the Telegraph node | nothing |
-| `npm run eval:v2` | The benchmark's offline arms (overwrites your local copy of the report) | nothing |
+| `npm run eval:v2` | The benchmark's offline arms (writes `output/evals/report-v2-offline.json`, leaving the live report alone) | nothing |
 | `npm run eval:v2:live` | The benchmark with paid review | test USDC |
 | `npm run weather:repair -- "City"` | Paid repair of a stale memory | 0.01 test USDC |
 | `npm run anchor` | Writes the log's latest hash to Sepolia | gas |
